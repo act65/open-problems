@@ -50,11 +50,13 @@ But how should learners interact to minimize a loss. What happens if some learne
 - Dynamical systems
 - Mechanism design
 - Mutli-objective optimisation
+- Type systems(?)
+
 
 # Understanding representations
 
 Why are neural networks better than SVMs, or RBFs, or ...? Are NNs best for every application?
-What are their downfalls? How can we make them more efficient? What is it that they are doing that is important?
+What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.
 
 - Adversarial examples.
 - Interpreting learned ...
@@ -109,3 +111,26 @@ All it really means is understanding a given learning problem in more depth so w
 
 Remembering memory
 Optimising optimisers
+
+<!-- and some level this is related to better priors -->
+
+# Scaling machine learning (BIG DATA)
+
+Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, ...
+making ML only for the rich and powerful. We need ...
+
+Dont want to have to train on multi epochs when the size of the dataset is large.
+Want sublinear costs in; memory, compute, data,
+
+- Mixture of experts
+- Active learning
+-
+
+# Trade-offs
+
+It is well known that you can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or ...
+For each given application the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
+Ultimately we would like to learn the most efficient behaviour given the requirement of the application.
+
+- [adaptive computation time]()
+-
