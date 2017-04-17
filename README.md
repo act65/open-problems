@@ -19,7 +19,6 @@ Want;
 * [Learning to learn](#learning-to-learn)
 
 
-
 # Real world prediction and learning
 
 Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
@@ -57,7 +56,7 @@ But how should learners interact to minimize a loss. What happens if some learne
 - Mechanism design
 - Mutli-objective optimisation
 - Type systems(?)
-
+- Modular and first class networks
 <!-- how does this relate to reasoning??? -->
 
 # Understanding representations
@@ -161,3 +160,8 @@ The ability to generate informative queries can save a lot of compute (ref?).
 - experiment design
 - hypothesis generation
 - active learning
+
+
+# Catastrophic interference
+
+Life long learning and transfer.
