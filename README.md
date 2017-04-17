@@ -37,13 +37,19 @@ Typically, a computers architecture abstracts away the need to consider this. Ho
 
 <!-- distributed in space or time or ?? -->
 
-- Federated optimisation.
+
 - TPU, GPU,
 - neuromorphic computing
+
+
+Not just the compute needs to be distributed, but the data will already be distributed.
+- Federated optimisation.
+
 
 What if;
 - inhomogenous compute, how can each node contribute most effectively? (seems close to multi-learner-systems?)
 - low communication bandwidth,
+
 
 # Multi learner systems
 
@@ -58,6 +64,14 @@ But how should learners interact to minimize a loss. What happens if some learne
 - Type systems(?)
 - Modular and first class networks
 <!-- how does this relate to reasoning??? -->
+
+<!--
+i think there might be a couple separate problems here
+- stability in optimising multiple losses
+- manipulating modules
+- sharing? transfer? ??
+-
+-->
 
 # Understanding representations
 
