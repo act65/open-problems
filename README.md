@@ -1,14 +1,3 @@
-* [Real time prediction](#real-time-prediction-and-learning)
-* [Distributed learning](#distributed-learning)
-* [Understanding representations](#understanding-representations)
-* [Flexible credit assignment](#flexible-credit-assignment)
-* [Learning complex functions](#learning-complex-functions)
-* [Structured learning](#structured-learning)
-* [Better priors](#better-priors)
-* [Will it differentiate?](#will-it-differentiate)
-* [Learning to learn](#learning-to-learn)
-
-***
 <!--
 - Why is it important? What is it? Why is it a problem? Motivation!
 - Related work.
@@ -19,7 +8,19 @@ Want;
 - related work to be comprehensive and its analysis insightful.
 -->
 
-# Real time prediction and learning
+* [Real time prediction](#real-world-prediction-and-learning)
+* [Distributed learning](#distributed-learning)
+* [Understanding representations](#understanding-representations)
+* [Flexible credit assignment](#flexible-credit-assignment)
+* [Learning complex functions](#learning-complex-functions)
+* [Structured learning](#structured-learning)
+* [Better priors](#better-priors)
+* [Will it differentiate?](#will-it-differentiate)
+* [Learning to learn](#learning-to-learn)
+
+
+
+# Real world prediction and learning
 
 Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
 Having to learn and predict with the same set of minimal resources. Use for prediction now, and use for consolidation later?
@@ -32,9 +33,14 @@ Having to learn and predict with the same set of minimal resources. Use for pred
 
 # Distributed learning
 
-Fundamentally, learning must be distributed. This is because; computation and storage are fundamentally distributed. Typically, a GPUs architecture abstracts away the need to consider this. However, ...
+Fundamentally, learning must be distributed. This is because; computation and storage are fundamentally distributed. Physics tells us there is a universal limit to information density.
+Typically, a computers architecture abstracts away the need to consider this. However, ... we could be smarter in designing our system to reflect the computations done in learning.
 
-Federated optimisation.
+<!-- distributed in space or time or ?? -->
+
+- Federated optimisation.
+- TPU, GPU,
+- neuromorphic computing
 
 What if;
 - inhomogenous compute, how can each node contribute most effectively? (seems close to multi-learner-systems?)
@@ -52,6 +58,7 @@ But how should learners interact to minimize a loss. What happens if some learne
 - Mutli-objective optimisation
 - Type systems(?)
 
+<!-- how does this relate to reasoning??? -->
 
 # Understanding representations
 
@@ -68,6 +75,9 @@ What are their downfalls? How can we make them more efficient? What is it that t
 
 
 # Learning complex functions
+
+Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
+How can we design
 
 - Curriculum,
 - long-term and deep,
@@ -134,3 +144,20 @@ Ultimately we would like to learn the most efficient behaviour given the require
 
 - [adaptive computation time]()
 -
+
+
+# Privacy
+
+Probably the most practical problem to solve.
+
+
+# Question asking
+
+The ability to generate informative queries can save a lot of compute (ref?).
+
+
+
+- creativity
+- experiment design
+- hypothesis generation
+- active learning
