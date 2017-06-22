@@ -1,3 +1,217 @@
-<body>
-<script src=template.js></script>
-</body>
+<!DOCTYPE html><html><body><h1>better-priors</h1>Not possible to have a universally smart algol.
+
+Need domain specific priors. How hard are these to find? What domains do we really care about and need to find better priors?
+
+<hr><h1>big-data</h1>
+Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, ...
+making ML only for the rich and powerful. We need ...
+
+Dont want to have to train on multi epochs when the size of the dataset is large.
+Want sublinear costs in; memory, compute, data,
+
+- Mixture of experts
+- Active learning
+-
+
+
+When you have a lot of data... Unsupervised/reinforcement!
+
+<hr><h1>creative-exploration</h1>What is creativity?
+What is the optimal way to explore?
+What are the limits and costs?
+
+<hr><h1>deep-learning</h1><!-- this seems close to flexible credit assignment? and structured learning? -->
+
+Define: Deep learning is ... using sgd + ad. It is a big deal because it allows faster learning than ...
+Let's apply this approach to as many things as possible.
+
+There are many functions that are not currently differentiable,
+What does differentiability buy us?
+
+- trees (diff boundary trees)
+- Graphs
+
+differentiable indexing.
+differentiable sparse gating
+
+<hr><h1>distributed-learning</h1>Fundamentally, learning must be distributed. This is because; computation and storage are fundamentally distributed. Physics tells us there is a universal limit to information density.
+Typically, a computers architecture abstracts away the need to consider this. However, ... we could be smarter in designing our system to reflect the computations done in learning.
+
+<!-- distributed in space or time or ?? -->
+
+
+- TPU, GPU,
+- neuromorphic computing
+
+
+Not just the compute needs to be distributed, but the data will already be distributed.
+- Federated optimisation.
+
+
+What if;
+- inhomogenous compute, how can each node contribute most effectively? (seems close to multi-learner-systems?)
+- low communication bandwidth,
+
+<hr><h1>falsifying-hypotheses</h1>The ability to generate informative queries can save a lot of compute (ref?).
+
+- creativity
+- experiment design
+- hypothesis generation
+- active learning
+
+
+Counterfactuals and falsification
+
+<hr><h1>identifying-structure</h1>How can we adapt to structure in the data?
+Online optimisation of the processing of a NN to make it more efficient? Writing often used processes into hardware.
+
+<hr><h1>learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
+How can we design
+
+- Curriculum, (two types? target and capacity?)
+- long-term and deep,
+-
+
+What do we mean by complicated?
+
+Constructing more complex fns from simple ones. Starting with the simplest hypotheses.
+
+<hr><h1>learning-to-learn</h1>If computers are ever going to take over the world, they will need to be able to learn to learn. This kind of self-optimisation, is what I hold dear and I believe that makes us 'intelligent'.
+Learning is great, as we are currently finding out, however, there have been a few different learning algorithms over the years. First nature started out with natural selection, but it is incredibly slow O(billions of years...).
+
+All it really means is understanding a given learning problem in more depth so we can include 'better' inductive biases in the optimiser.
+
+[Automated Curriculum Learning for Neural Networks](https://arxiv.org/abs/1704.03003)
+[Meta Networks](https://arxiv.org/pdf/1703.00837.pdf)
+[Learning to optimize](https://doi.org/10.3200/JMBR.36.3.339-351)
+[Learning to reinforcement learn](http://arxiv.org/abs/1611.05763)
+[Learning to learn by gradient descent by gradient descent](http://arxiv.org/abs/1606.04474)
+
+Remembering memory
+Optimising optimisers
+
+<hr><h1>multi-agent-systems</h1>Why is this important?
+We want modular learning system, this means we need multiple loss fns with different learners.
+But how should learners interact to minimize a loss. What happens if some learner want to maximise the loss as well.
+
+
+- Dynamical systems
+- Mechanism design
+- Mutli-objective optimisation
+- Type systems(?)
+- Modular and first class networks
+<!-- how does this relate to reasoning??? -->
+
+<!--
+i think there might be a couple separate problems here
+- stability in optimising multiple losses
+- manipulating modules
+- sharing? transfer? ??
+-
+-->
+
+Ensembles?
+
+<hr><h1>priors-for-learing</h1>Why are neural networks better than SVMs, or RBFs, or ...? Are NNs best for every application?
+What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.
+
+- Adversarial examples.
+- Interpreting learned ...
+
+<hr><h1>real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
+Having to learn and predict with the same set of minimal resources. Use for prediction now, and use for consolidation later?
+
+
+- Aligning delayed signals with each other and rewards.
+- Sharing resources for learning and inference.
+- Predictive processing. Error correcting (surfing uncertainty)
+-
+
+<hr><h1>sketching-models</h1>What if there was a high level language for describing what a NN does/has learn? It could then make sense to efficiently communicate this, or to store it in compressed form, or ...?
+
+Passing around models as a first class function. WHat about composing different learned models?
+
+Given enough trained models, and their respective data. I could make sense to learn a sketch of each!?
+
+
+More related to first class models/nets.
+
+## Meta-cognitive nets. 
+
+Each networks/predictor should have;
+
+* a callable fn f:x->y.
+* a sketch of the inputs, x that it was trained on.
+* some belief/knwledge about which labels is it good at. and which data is requires to get better at others.
+* some descrption of what it uses to label a input, the method, how. what it pays attention to and how it processes it.
+* ?
+
+<hr><h1>specifying-goals</h1>Insert pic of lion.
+
+How do you determine if the image you are looking at is a lion?
+Ok, write that process down as a program. Oh... That's really hard.
+
+If we can write what we want down as a clear function/equation, then we can probably optimise it. (how?) If not. Hmm.
+
+Machine learning allows an alternative approach to specifying what we want. It allows us to 'show' the computer what we want by example. Pairs for images and their labels, ...
+
+It is not always possible to use examples to show the computer what we want, for examples learning p(x). GANs? Allow us to extend this ...
+<!-- What about generators of goals? (that RL stuff?) -->
+
+In RL our goal is some game state/set of states. It seems reasonable to be able to compress this set of game states into some sort of hidden representation that we can compare against. Or communicate to others.
+<!-- But if you set the goal as a game state, then how does improvement make sense? Once the state has been achieved there is nothing left to do...? -->
+
+However. What about when the goal is some process or function or algorithm? How can we represent sets of these? By their input/output? ...??
+
+
+<!-- This is closely related to learning loss functions! -->
+
+Different ways to specify a goal/function:
+
+<!-- What do we mean by specify?
+- Choose,
+- narrow down,
+-
+
+so it is a way to reduce search space.
+what about falsification?
+-->
+
+* can show by example, (but what if we only know the goal, and not how that relates to inputs? that is just RL, as opposed to SL, where we have pairs.)
+* have a function, f, that tells us (true, false, ...) whether y is the goal (where f may or may not be differentiable). UL or SL.
+* Reducing possible options. eg. can only pick from some set of functions (e.g. linear, ...).
+* randomly...
+
+What about if we dont know what we want? Then we must either;
+
+* specify a process for finding new things,
+* simulate all possible goals and then pick out the ones we like.
+
+
+What if we could specify goals using natural language.
+
+What about the efficient specification of goals? Examples take space, equations do not.
+
+More abstractly, how can two agents (that work differently) communicate their goals/processes?
+
+<hr><h1>structured-learning</h1>Extending learning to different data types, especially data types with more
+structure. Graphs, trees, ?!?
+
+<hr><h1>trade-offs</h1>It is well known that you can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or ...
+For each given application the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
+Ultimately we would like to learn the most efficient behaviour given the requirement of the application.
+
+- [adaptive computation time]()
+-
+
+<!-- Could like to my own work on conserved quantities -->
+
+<hr><h1>understanding-representations</h1>Why do cts representations of weight make sense? Why as vectors?
+
+Why does NAT learn better representations than AEs?
+
+Embedding different logics into representations.
+
+How does representation/structure effect function!
+
+<hr></body></html>

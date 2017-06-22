@@ -34,4 +34,5 @@ What about.
 - relations and reasoning.
 - a richer type system for learning systems.
 - top down attention. gradient modulation, fast variables, ...?
+- hyper-parameter search space. easy(er) to learn functions. the area of finable parameter settings.
 -->
