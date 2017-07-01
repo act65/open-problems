@@ -6,6 +6,8 @@ import sys
 import jinja2
 import markdown
 
+import os
+
 TEMPLATE = """<!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +37,6 @@ TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-
 def parse_args(args=None):
     d = 'Make a complete, styled HTML document from a Markdown file.'
     parser = argparse.ArgumentParser(description=d)
@@ -50,7 +51,16 @@ def parse_args(args=None):
 
 def main(args=None):
     args = parse_args(args)
-    md = args.mdfile.read()
+    # md = args.mdfile.read()
+
+    md = ''
+    for fname in os.listdir('problems'):
+        path = os.path.join('problems', fname)
+        with open(path) as f:
+            md += '<h1>{}</h1>'.format(fname[:-3])
+            md += f.read()
+            md += '\n<hr>'
+
     extensions = ['extra', 'smarty']
     html = markdown.markdown(md, extensions=extensions, output_format='html5')
     doc = jinja2.Template(TEMPLATE).render(content=html)
