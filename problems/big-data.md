@@ -7,7 +7,6 @@ Want sublinear costs in; memory, compute, data,
 
 - Mixture of experts
 - Active learning
--
 
 
 When you have a lot of data... Unsupervised/reinforcement!

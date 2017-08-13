@@ -7,7 +7,7 @@ Given enough trained models, and their respective data. I could make sense to le
 
 More related to first class models/nets.
 
-## Meta-cognitive nets. 
+## Meta-cognitive nets.
 
 Each networks/predictor should have;
 
