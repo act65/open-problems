@@ -1,13 +1,16 @@
-<!-- this seems close to flexible credit assignment? and structured learning? -->
-
-Define: Deep learning is ... using sgd + ad. It is a big deal because it allows faster learning than ...
-Let's apply this approach to as many things as possible.
+Deep learning is a meta algorithm for learning. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and stochastic gradient descent to update each layer.
+Long story short, it works. So let's apply this approach to as many domains as possible.
 
 There are many functions that are not currently differentiable,
-What does differentiability buy us?
 
-- trees (diff boundary trees)
-- Graphs
+- random variables
+- discrete variables
+- trees (diff boundary trees), Graphs
+- unknown (ie RL setting)
+
+Examples; OptNet, MuProp, ?
 
 differentiable indexing.
 differentiable sparse gating
+
+What does differentiability buy us?

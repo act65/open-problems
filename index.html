@@ -23,8 +23,15 @@
 <div class="container">
 <h1>better-priors</h1>
 
-<p>Not possible to have a universally smart algol.</p>
-<p>Need domain specific priors. How hard are these to find? What domains do we really care about and need to find better priors?</p>
+<p>Why are neural networks better than SVMs, or RBFs, or &hellip;? Are NNs best for every application?
+What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.</p>
+<ul>
+<li>Adversarial examples.</li>
+<li>Interpreting learned &hellip;</li>
+</ul>
+<p>Progress in unsupervised learning is likely to be made through our ability to specify domain specific priors (such as ???). This is because it is not possible to have a universally smart algol (see ???).</p>
+<p>What we need is better, more flexible and efficient (in compute, data ???), way to specify arbitrary priors on our models.</p>
+<p>Relatedly, what domains do we really care about and need to find better priors?</p>
 <p><hr><h1>big-data</h1>
 Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, &hellip;
 making ML only for the rich and powerful. We need &hellip;</p>
@@ -32,9 +39,7 @@ making ML only for the rich and powerful. We need &hellip;</p>
 Want sublinear costs in; memory, compute, data,</p>
 <ul>
 <li>Mixture of experts</li>
-<li>
-<h2>Active learning</h2>
-</li>
+<li>Active learning</li>
 </ul>
 <p>When you have a lot of data&hellip; Unsupervised/reinforcement!</p>
 <p><hr><h1>creative-exploration</h1>What is creativity?
@@ -51,7 +56,8 @@ What does differentiability buy us?</p>
 </ul>
 <p>differentiable indexing.
 differentiable sparse gating</p>
-<p><hr><h1>distributed-learning</h1>Fundamentally, learning must be distributed. This is because; computation and storage are fundamentally distributed. Physics tells us there is a universal limit to information density.
+<p><hr><h1>disentangled-features</h1>
+<hr><h1>distributed-learning</h1>Fundamentally, learning must be distributed. This is because; computation and storage are fundamentally distributed. Physics tells us there is a universal limit to information density.
 Typically, a computers architecture abstracts away the need to consider this. However, &hellip; we could be smarter in designing our system to reflect the computations done in learning.</p>
 <!-- distributed in space or time or ?? -->
 
@@ -72,10 +78,14 @@ Typically, a computers architecture abstracts away the need to consider this. Ho
 <li>active learning</li>
 </ul>
 <p>Counterfactuals and falsification</p>
-<p><hr><h1>identifying-structure</h1>How can we adapt to structure in the data?
+<p><hr><h1>heirarchical</h1>
+<hr><h1>identifying-structure</h1>How can we adapt to structure in the data?
 Online optimisation of the processing of a NN to make it more efficient? Writing often used processes into hardware.</p>
+<p><hr><h1>interpretable-visuals</h1>Had to get an intuitive understanding of what has been learned.</p>
+<p>We need visualisation tools (like other fields) that</p>
+<p>Better ways to visalise computations and their resource use would be good? Visualising the big Ohs?</p>
 <p><hr><h1>learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
-How can we design</p>
+How can we learn complex hypotheses (without having to &hellip; resources)</p>
 <ul>
 <li>Curriculum, (two types? target and capacity?)</li>
 <li>
@@ -114,12 +124,7 @@ i think there might be a couple separate problems here
 -->
 
 <p>Ensembles?</p>
-<p><hr><h1>priors-for-learing</h1>Why are neural networks better than SVMs, or RBFs, or &hellip;? Are NNs best for every application?
-What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.</p>
-<ul>
-<li>Adversarial examples.</li>
-<li>Interpreting learned &hellip;</li>
-</ul>
+<p>Related to learning by curriculum and transfer learning. Problems can often be decomposed into a set of smaller sub problems</p>
 <p><hr><h1>real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
 Having to learn and predict with the same set of minimal resources. Use for prediction now, and use for consolidation later?</p>
 <ul>
@@ -129,6 +134,9 @@ Having to learn and predict with the same set of minimal resources. Use for pred
 <h2>Predictive processing. Error correcting (surfing uncertainty)</h2>
 </li>
 </ul>
+<p><hr><h1>resource-constrained-settings</h1>Low compute: quantisation.
+Low memory. online algorithms.
+Low data: ?</p>
 <p><hr><h1>sketching-models</h1>What if there was a high level language for describing what a NN does/has learn? It could then make sense to efficiently communicate this, or to store it in compressed form, or &hellip;?</p>
 <p>Passing around models as a first class function. WHat about composing different learned models?</p>
 <p>Given enough trained models, and their respective data. I could make sense to learn a sketch of each!?</p>
@@ -180,6 +188,7 @@ what about falsification?
 <p>More abstractly, how can two agents (that work differently) communicate their goals/processes?</p>
 <p><hr><h1>structured-learning</h1>Extending learning to different data types, especially data types with more
 structure. Graphs, trees, ?!?</p>
+<p>Relation to reasoning?</p>
 <p><hr><h1>trade-offs</h1>It is well known that you can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or &hellip;
 For each given application the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
 Ultimately we would like to learn the most efficient behaviour given the requirement of the application.</p>
@@ -190,6 +199,13 @@ Ultimately we would like to learn the most efficient behaviour given the require
 <p>Why does NAT learn better representations than AEs?</p>
 <p>Embedding different logics into representations.</p>
 <p>How does representation/structure effect function!</p>
+<p>Embedding relations, memory, &hellip; into distributed (linear?) representations</p>
+<p><hr><h1>universal-approximators</h1>Can we find an representation that approximates arbitrary functions easily?
+Which representations can approximate type functions we care about with low error?
+<!-- Does low error really matter? Does that constrain the volume of low minima?
+But how easy are the minima to find?--></p>
+<p>What are the best algorithmic atoms to build out of?
+Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
 <hr>
 </div>
 </body>
