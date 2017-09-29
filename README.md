@@ -22,5 +22,5 @@ Want;
 What about.
 
 - disentangling representations..
-- parameter sharing, invariance, symmetry.
+
 - a richer type system for learning systems.
