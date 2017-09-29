@@ -18,14 +18,22 @@ TEMPLATE = """<!DOCTYPE html>
         }
         code, pre {
             font-family: monospace;
+            }
+            h1 code,
+            h2 code,
+            h3 code,
+            h4 code,
+            h5 code,
+            h6 code {
+                font-size: inherit;
         }
-        h1 code,
-        h2 code,
-        h3 code,
-        h4 code,
-        h5 code,
-        h6 code {
-            font-size: inherit;
+        div {
+            border: 1px solid black;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            background-color: lightblue;
         }
     </style>
 </head>
