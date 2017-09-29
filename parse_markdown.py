@@ -28,12 +28,8 @@ TEMPLATE = """<!DOCTYPE html>
                 font-size: inherit;
         }
         div {
-            border: 1px solid black;
-            margin-top: 100px;
-            margin-bottom: 100px;
-            margin-right: 150px;
-            margin-left: 80px;
-            background-color: lightblue;
+            margin-right: 400px;
+            margin-left: 400px;
         }
     </style>
 </head>
@@ -65,7 +61,7 @@ def main(args=None):
     for fname in os.listdir('problems'):
         path = os.path.join('problems', fname)
         with open(path) as f:
-            md += '<h1>{}</h1>'.format(fname[:-3])
+            md += '<h1>  {}</h1>'.format(fname[:-3])
             md += f.read()
             md += '\n<hr>'
 
