@@ -21,66 +21,27 @@
 </head>
 <body>
 <div class="container">
-<h1>annotated-data</h1>
+<h1>effective-explanations</h1>
 
-<p>Supervised learning requires annotated data!
-Data is where the value is at. What incentives are there to open data to the public?</p>
-<p>Want: a cheaper way to annotate data. A hierarchical method of labelling? Interactive explorations of data, that can also be fun?</p>
-<p>New and clever ways of extracting annotations from existing datasets.</p>
-<p><hr><h1>better-priors</h1>What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.</p>
-<ul>
-<li>Adversarial examples.</li>
-<li>Interpreting learned &hellip;</li>
-</ul>
-<p>Progress in unsupervised learning is likely to be made through our ability to specify domain specific priors (such as ???). This is because it is not possible to have a universally smart algol (see ???).</p>
-<p>What we need is better, more flexible and efficient (in compute, data ???), way to specify arbitrary priors on our models.</p>
-<p>Relatedly, what domains do we really care about and need to find better priors?</p>
-<p>Priors can ? models in a few different ways; loss/regularisation, layers, topological structure, weight sharing, ?</p>
-<p><hr><h1>big-data</h1>Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, &hellip;
-Making ML only for the rich and powerful. We need &hellip;</p>
-<p>Dont want to have to train on multi epochs when the size of the dataset is large.
-Want sublinear costs in; memory, compute, data,</p>
-<ul>
-<li>Mixture of experts</li>
-<li>Active learning</li>
-</ul>
-<p>When you have a lot of data&hellip; Unsupervised/reinforcement!</p>
-<p><hr><h1>creative-exploration</h1>What is creativity?
-What is the optimal way to explore?
-What are the limits and costs?</p>
-<p>Explore-exploit tradeoff.</p>
-<p>Related? Creating diverse samples/examples</p>
-<p><hr><h1>deep-learning</h1>Deep learning is a meta algorithm for learning. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and stochastic gradient descent to update each layer.
-Long story short, it works. So let&rsquo;s apply this approach to as many domains as possible.</p>
-<p>There are many functions that are not currently differentiable,</p>
-<ul>
-<li>random variables</li>
-<li>discrete variables</li>
-<li>trees (diff boundary trees), Graphs</li>
-<li>unknown (ie RL setting)</li>
-</ul>
-<p>Examples; OptNet, MuProp, ?</p>
-<p>differentiable indexing.
-differentiable sparse gating</p>
-<p>What does differentiability buy us?</p>
-<p><hr><h1>disentangled-features</h1>
-<hr><h1>distributed-learning</h1>Fundamentally, learning must be distributed because compute and memory must be distributed. Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing.
-Typically, a computers architecture abstracts away the need to consider this.
-However, can we be smarter in designing our system to reflect the computations done in learning.</p>
-<!-- distributed in space or time or ??  memory in space == memory in time? -->
+<p>Deep learning needs to see the same dataset many times, and eventually is finds the patterns.</p>
+<p>We have the ability to learn from a single example. How is this possible?</p>
+<p>I think it is because we hypothesis about the causes, we create models/explanations.</p>
+<p><hr><h1>identifying-structure</h1>How can we adapt to structure in the data?
+Online optimisation of the processing of a NN to make it more efficient? Writing often used processes into hardware.</p>
+<p>Structural adaptation of a model based on structure/patterns in the data.</p>
+<p>An example could be; we are learning a linear model and the linear transform can accurately (within some tolerance, or at least more so that other factorisations) be factorised with a cholesky decompoisition. So factorise the linear transform with a cholseky.</p>
+<!-- Problem this runs into is 'over' specialisation? What if we were wrong? How can we undo the decision? -->
 
+<p>Or, an oracle looks through the operations being done in our network (multi resolution low level &ndash; addition, exp, &hellip; &ndash; and high level &ndash; svd, QP, &hellip;) and replaces approximations with the closest op. Error of that op still tracked.</p>
+<p><hr><h1>real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
+Having to learn and predict with the same set of minimal resources. Use for prediction now, and use for consolidation later?</p>
 <ul>
-<li>TPU, GPU,</li>
-<li>neuromorphic computing</li>
+<li>Aligning delayed signals with each other and rewards.</li>
+<li>Sharing resources for learning and inference. Might not be able to do both at the same time&hellip;</li>
+<li>
+<h2>Predictive processing. Error correcting (surfing uncertainty)</h2>
+</li>
 </ul>
-<p>Not just the compute needs to be distributed, but the data will already be distributed.</p>
-<ul>
-<li>Federated optimisation.</li>
-</ul>
-<p>What if;
-- inhomogenous compute, how can each node contribute most effectively? (related to multi-agent-systems?)
-- low communication bandwidth,
--</p>
 <p><hr><h1>falsifying-hypotheses</h1>Falsification is ???&hellip;</p>
 <p>The ability to generate informative queries can save a lot of compute (ref?).</p>
 <ul>
@@ -90,12 +51,43 @@ However, can we be smarter in designing our system to reflect the computations d
 </ul>
 <p>Counterfactuals and falsification</p>
 <p>Ideal case is that we have some oracle (maybe physics for experiment design, a database for query generation, &hellip;) that is expensive to call. Given what a learner knows, its next call to the oracle should be to falsify its leading hypothesis.</p>
-<p><hr><h1>identifying-structure</h1>How can we adapt to structure in the data?
-Online optimisation of the processing of a NN to make it more efficient? Writing often used processes into hardware.</p>
-<p>Structural adaptation of a model based on structure/patterns in the data.</p>
-<p>An example could be; we are learning a linear model and the linear transform can accurately (within some tolerance, or at least more so that other factorisations) be factorised with a cholesky decompoisition. So factorise the linear transform with a cholseky.</p>
-<!-- Problem this runs into is 'over' specialisation? What if we were wrong? How can we undo the decision? -->
-
+<p><hr><h1>learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
+How can we learn complex functions (without having to &hellip; resources)</p>
+<ul>
+<li>Curriculum, (two types? target and capacity?)</li>
+<li>
+<h2>long-term and deep,</h2>
+</li>
+</ul>
+<p>What do we mean by complicated?</p>
+<p>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</p>
+<p><hr><h1>disentangled-features</h1>
+<hr><h1>sketching-models</h1>What if there was a high level language for describing what a NN does/has learn? It could then make sense to efficiently communicate this, or to store it in compressed form, or &hellip;?</p>
+<p>Passing around models as a first class function. WHat about composing different learned models?</p>
+<p>Given enough trained models, and their respective data. I could make sense to learn a sketch of each!?</p>
+<p>More related to first class models/nets.</p>
+<h2>Meta-cognitive nets.</h2>
+<p>Each networks/predictor should have;</p>
+<ul>
+<li>a callable fn f:x-&gt;y.</li>
+<li>a sketch of the inputs, x that it was trained on.</li>
+<li>some belief/knwledge about which labels is it good at. and which data is requires to get better at others.</li>
+<li>some descrption of what it uses to label a input, the method, how. what it pays attention to and how it processes it.</li>
+<li>?</li>
+</ul>
+<p><hr><h1>top-down-attention</h1>Deep learning needs to see the same dataset many times, and eventually is finds the patterns.</p>
+<p>We have the ability to learn from a single example. How is this possible? </p>
+<p><hr><h1>life-long-learning</h1>
+<hr><h1>zero-one-shot</h1>One-shot learning. Learning from a single example.
+Zero-shot learning. Making a damn good guess.</p>
+<p><hr><h1>annotated-data</h1>Supervised learning requires annotated data!
+This means: data is where the value is at. So, what incentives are there to open data to the public? None. Unless, ?.</p>
+<p>Possible (half) solution?
+A cheaper way to annotate data. Hierarchical label structures? Interactive exploration of data (that is also fun)?</p>
+<p>New and clever ways of extracting annotations from existing datasets. Something like the how unsupervised methods extract labels from the existing data. Train on context, recontruction, ?, real/fake, &hellip;</p>
+<p>Projects that satisfy these wants;
+<em> Interactive tensorboard visualisations. Ability to add meta data while viewing the <a href="http://projector.tensorflow.org/">projector</a>.
+</em> ?</p>
 <p><hr><h1>interpretable-visuals</h1>It is hard to get an intuitive understanding of what has been learned.</p>
 <p>Current tools for this are;</p>
 <ul>
@@ -107,16 +99,15 @@ Online optimisation of the processing of a NN to make it more efficient? Writing
 <em> computations and their resource use would be good? Visualising the big Ohs?
 </em> the learning dynamics
 * ?</p>
-<p><hr><h1>learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
-How can we learn complex functions (without having to &hellip; resources)</p>
+<p><hr><h1>better-priors</h1>What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.</p>
 <ul>
-<li>Curriculum, (two types? target and capacity?)</li>
-<li>
-<h2>long-term and deep,</h2>
-</li>
+<li>Adversarial examples.</li>
+<li>Interpreting learned &hellip;</li>
 </ul>
-<p>What do we mean by complicated?</p>
-<p>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</p>
+<p>Progress in unsupervised learning is likely to be made through our ability to specify domain specific priors (such as ???). This is because it is not possible to have a universally smart algol (see ???).</p>
+<p>What we need is better, more flexible and efficient (in compute, data ???), way to specify arbitrary priors on our models.</p>
+<p>Relatedly, what domains do we really care about and need to find better priors?</p>
+<p>Priors can ? models in a few different ways; loss/regularisation, layers, topological structure, weight sharing, ?</p>
 <p><hr><h1>learning-to-learn</h1>If computers are ever going to take over the world, they will need to be able to learn to learn. This kind of self-optimisation, is what I hold dear and I believe that makes us &lsquo;intelligent&rsquo;.
 Learning is great, as we are currently finding out, however, there have been a few different learning algorithms over the years. First nature started out with natural selection, but it is incredibly slow O(billions of years&hellip;).</p>
 <p>All it really means is understanding a given learning problem in more depth so we can include &lsquo;better&rsquo; inductive biases in the optimiser.</p>
@@ -127,6 +118,36 @@ Learning is great, as we are currently finding out, however, there have been a f
 <a href="http://arxiv.org/abs/1606.04474">Learning to learn by gradient descent by gradient descent</a></p>
 <p>Remembering memory
 Optimising optimisers</p>
+<p><hr><h1>resource-constrained-settings</h1>Low compute: quantisation.
+Low memory. online algorithms.
+Low data: ?</p>
+<p><hr><h1>learning-loss</h1>Loss functions are usually given to us or tailored for a specific job. Is there some new representation of loss functions that allows;</p>
+<h4>Learning the loss function.</h4>
+<p>Sometimes it can be hard to write down what we want to optimise, if we could just show some examples of our metric then we could learn that and optimise it? <a href="https://arxiv.org/abs/1406.2661">GANs</a> seem to be an example of this.</p>
+<h4>Decomposition.</h4>
+<p>Decomposing a loss function into many (<a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>). <a href="https://arxiv.org/abs/1608.05343">DNIs</a> seem to do this.
+The ability to reduce a complex goal into smaller achievable steps is the goal of XXX.</p>
+<p>Doing so would allow;
+<em> parallel learning of the different tasks,
+</em> specialisation,
+*</p>
+<p>Also related to <a href="https://arxiv.org/pdf/1703.01161.pdf">Feudal nets</a>.
+The important/cool part is having an actual handle to the subproblems.</p>
+<h4>First class losses.</h4>
+<p>Loss fns as first class fns that can be composed, passed around, traded, &hellip;
+Imagine some system, where agents cooperate and compete. Cooperation of competition can be organised by communicating loss functions.</p>
+<p>The composition of two loss functions is ?</p>
+<p>My goal is A, your goal is B, A and B are similar, let&rsquo;s make babies.
+My goal is X, your goal is Y, Y is orthogonal to my X, stay out of my way.</p>
+<p><hr><h1>trade-offs</h1>It is well known that you can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or &hellip;
+For each given application the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
+Ultimately we would like to learn the most efficient behaviour given the requirement of the application.</p>
+<h2>- <a href="">adaptive computation time</a></h2>
+<!-- Could like to my own work on conserved quantities -->
+
+<p>Tradeoff between;
+<em> number of parameters and &ldquo;findability&rdquo; of a good configuration.
+</em> </p>
 <p><hr><h1>multi-agent-systems</h1>Why is this important?
 We want modular learning system, this means we need multiple loss fns with different learners.
 But how should learners interact to minimize a loss. What happens if some learner want to maximise the loss as well.</p>
@@ -148,43 +169,18 @@ i think there might be a couple separate problems here
 
 <p>Ensembles?</p>
 <p>Related to learning by curriculum and transfer learning. Problems can often be decomposed into a set of smaller sub problems</p>
-<p><hr><h1>real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
-Having to learn and predict with the same set of minimal resources. Use for prediction now, and use for consolidation later?</p>
 <ul>
-<li>Aligning delayed signals with each other and rewards.</li>
-<li>Sharing resources for learning and inference. Might not be able to do both at the same time&hellip;</li>
-<li>
-<h2>Predictive processing. Error correcting (surfing uncertainty)</h2>
-</li>
+<li>Training networks with networks. Distillation, multi-modal target matching, eyes teaching proprioception.</li>
 </ul>
-<p><hr><h1>reasoning-realtions</h1>Extending learning to different data types, especially data types with more
-structure. Graphs, trees, ?!?</p>
-<p>Relation to reasoning?</p>
-<p><hr><h1>representations-geometry</h1>What is the right geometry for learning?</p>
-<!-- Pics of vector fields ![]() -->
-
-<p>Studied in online learning, ?,</p>
-<p>Why do cts representations of weight make sense? Why as vectors?</p>
-<p>Why does NAT learn better representations than AEs?</p>
-<p>Embedding different logics into representations.</p>
-<p>How does representation/structure effect function!</p>
-<p>Embedding relations, memory, &hellip; into distributed (linear?) representations</p>
-<p><hr><h1>resource-constrained-settings</h1>Low compute: quantisation.
-Low memory. online algorithms.
-Low data: ?</p>
-<p><hr><h1>sketching-models</h1>What if there was a high level language for describing what a NN does/has learn? It could then make sense to efficiently communicate this, or to store it in compressed form, or &hellip;?</p>
-<p>Passing around models as a first class function. WHat about composing different learned models?</p>
-<p>Given enough trained models, and their respective data. I could make sense to learn a sketch of each!?</p>
-<p>More related to first class models/nets.</p>
-<h2>Meta-cognitive nets.</h2>
-<p>Each networks/predictor should have;</p>
+<p><hr><h1>big-data</h1>Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, &hellip;
+Making ML only for the rich and powerful. We need &hellip;</p>
+<p>Dont want to have to train on multi epochs when the size of the dataset is large.
+Want sublinear costs in; memory, compute, data,</p>
 <ul>
-<li>a callable fn f:x-&gt;y.</li>
-<li>a sketch of the inputs, x that it was trained on.</li>
-<li>some belief/knwledge about which labels is it good at. and which data is requires to get better at others.</li>
-<li>some descrption of what it uses to label a input, the method, how. what it pays attention to and how it processes it.</li>
-<li>?</li>
+<li>Mixture of experts</li>
+<li>Active learning</li>
 </ul>
+<p>When you have a lot of data&hellip; Unsupervised/reinforcement!</p>
 <p><hr><h1>specifying-goals</h1>Insert pic of lion.</p>
 <p>How do you determine if the image you are looking at is a lion?
 Ok, write that process down as a program. Oh&hellip; That&rsquo;s really hard.</p>
@@ -221,16 +217,54 @@ what about falsification?
 <p>What if we could specify goals using natural language.</p>
 <p>What about the efficient specification of goals? Examples take space, equations do not.</p>
 <p>More abstractly, how can two agents (that work differently) communicate their goals/processes?</p>
-<p><hr><h1>trade-offs</h1>It is well known that you can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or &hellip;
-For each given application the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
-Ultimately we would like to learn the most efficient behaviour given the requirement of the application.</p>
-<h2>- <a href="">adaptive computation time</a></h2>
-<!-- Could like to my own work on conserved quantities -->
+<p><hr><h1>distributed-learning</h1>Fundamentally, learning must be distributed because compute and memory must be distributed. Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing.
+Typically, a computers architecture abstracts away the need to consider this.
+However, can we be smarter in designing our system to reflect the computations done in learning.</p>
+<!-- distributed in space or time or ??  memory in space == memory in time? -->
 
+<ul>
+<li>TPU, GPU,</li>
+<li>neuromorphic computing</li>
+</ul>
+<p>Not just the compute needs to be distributed, but the data will already be distributed.</p>
+<ul>
+<li>Federated optimisation.</li>
+</ul>
+<p>What if;
+- inhomogenous compute, how can each node contribute most effectively? (related to multi-agent-systems?)
+- low communication bandwidth,
+-</p>
+<p><hr><h1>curse-of-dimensionality</h1>
+<hr><h1>representations-geometry</h1>What is the right geometry for learning?</p>
+<!-- Pics of vector fields ![]() -->
+
+<p>Studied in online learning, ?,</p>
+<p>Why do cts representations of weight make sense? Why as vectors?</p>
+<p>Why does NAT learn better representations than AEs?</p>
+<p>Embedding different logics into representations.</p>
+<p>How does representation/structure effect function!</p>
+<p>Embedding relations, memory, &hellip; into distributed (linear?) representations</p>
+<p><hr><h1>deep-learning</h1>Deep learning is a meta algorithm for learning. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and stochastic gradient descent to update each layer.
+Long story short, it works. So let&rsquo;s apply this approach to as many domains as possible.</p>
+<p>There are many functions that are not currently differentiable,</p>
+<ul>
+<li>random variables</li>
+<li>discrete variables</li>
+<li>trees (diff boundary trees), Graphs</li>
+<li>unknown (ie RL setting)</li>
+</ul>
+<p>Examples; OptNet, MuProp, ?</p>
+<p>differentiable indexing.
+differentiable sparse gating</p>
+<p>What does differentiability buy us?</p>
+<p><hr><h1>creative-exploration</h1>What is creativity?
+What is the optimal way to explore?
+What are the limits and costs?</p>
+<p>Explore-exploit tradeoff.</p>
+<p>Related? Creating diverse samples/examples</p>
 <p><hr><h1>universal-approximators</h1>Can we find an representation that approximates arbitrary functions easily?
-Which representations can approximate type functions we care about with low error?
-<!-- Does low error really matter? Does that constrain the volume of low minima?
-But how easy are the minima to find?--></p>
+<!-- Probably not, need to specify a type of problem? -->
+Which representations can approximate type functions we care about with low error?</p>
 <p>What are the best algorithmic atoms to build out of?
 Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
 <p>A neural network is the combination of a few distinct ideas.</p>
@@ -238,6 +272,16 @@ Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
 <p>Why are neural networks better than SVMs, or RBFs, or &hellip;? Are NNs best for every application?</p>
 <p>Current wisdom hints that local and heirarchical function approximations are !!, but ?
 * The ReLU is discontinuous, is that important?</p>
+<p>Why is it that (convolutional) neural networks work so well? Hierarchical, local, discontinuous, ?. </p>
+<p><hr><h1>reasoning-and-realtions</h1>Extending learning to different data types, especially data types with more
+structure. Graphs, trees, ?!?</p>
+<p>Relation to reasoning?</p>
+<ul>
+<li>Computers can easily reason about symbols.</li>
+<li>With the advent of deep learning) computers can learn concepts and attach them to symbols.</li>
+<li>Thus computers can reason about learned concepts.</li>
+<li>Final step. Learn to reason about learned concepts.</li>
+</ul>
 <hr>
 </div>
 </body>

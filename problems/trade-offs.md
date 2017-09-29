@@ -6,3 +6,7 @@ Ultimately we would like to learn the most efficient behaviour given the require
 -
 
 <!-- Could like to my own work on conserved quantities -->
+
+Tradeoff between;
+* number of parameters and "findability" of a good configuration.
+* 

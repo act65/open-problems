@@ -21,3 +21,6 @@ i think there might be a couple separate problems here
 Ensembles?
 
 Related to learning by curriculum and transfer learning. Problems can often be decomposed into a set of smaller sub problems
+
+
+* Training networks with networks. Distillation, multi-modal target matching, eyes teaching proprioception.
