@@ -27,25 +27,56 @@
 <div class="container">
 <h1>  effective-explanations</h1>
 
-<p>Deep learning needs to see the same dataset many times, and eventually is finds the patterns.</p>
-<p>We have the ability to learn from a single example. How is this possible?</p>
-<p>I think it is because we hypothesis about the causes, we create models/explanations.</p>
-<p><hr><h1>  identifying-structure</h1>How can we adapt to structure in the data?
-Online optimisation of the processing of a NN to make it more efficient? Writing often used processes into hardware.</p>
+<p>Deep learning needs to see the same dataset many times, eventually learns some useful patterns, but not before wandering here and there to checkout what it would be like to do a crappy job.</p>
+<h4>One-shot</h4>
+<p>We (seem to ) have the ability to learn from a single example. How is this possible? Can we get computers to do it?</p>
+<p>Trivially, this is just memorisation. The interesting part comes from trying to achieve a sub-linear memory footprint, aka some sort of online compression. And this is where we get back to deep learning. We need to pick some method to compress these examples we are shooting, and deep learning seems like a decent canidate, except for its data complexity.</p>
+<p>Most definitions of learning (e.g. PAC) include some garuntee that a single example should not change the output of the learning algorithm by more than epsilon. This seems to preclude the ability to do one-shot learning?</p>
+<!-- How do current methods get around this? -->
+
+<!-- Could be closer to memory, decompose new input into things already known, memorise signal over them. Then learning would be the how to decompose. Aka one-shot == memory. -->
+
+<h4>Zero-shot</h4>
+<p>If one-shot learning is: &ldquo;Learning from a single example&rdquo; then zero-shot learning would be: &ldquo;making a damn good guess&rdquo;.</p>
+<p>Given examples about X, can we learn about Y?</p>
+<p>A possible hypothesis for how we manage this is that we hypothesise about causes, we create models/explanations, which are occasionally accurate and generalise wonderfully.</p>
+<p><hr><h1>  identifying-structure</h1>Can we adapt our computations to the structure in our data?
+We could adaptively choose the hardware/representations we are using based upon operations we are calculating.</p>
+<p>For example: online optimisation of the processing of a NN to make it more efficient. Writing often used processes into hardware.</p>
 <p>Structural adaptation of a model based on structure/patterns in the data.</p>
-<p>An example could be; we are learning a linear model and the linear transform can accurately (within some tolerance, or at least more so that other factorisations) be factorised with a cholesky decompoisition. So factorise the linear transform with a cholseky.</p>
+<p>For example;</p>
+<ul>
+<li>we are learning a linear model. It turns out the linear transform can accurately (within some tolerance, or at least more so that other factorisations) be factorised with a cholesky decompoisition. So replace the linear transform with a cholseky decomposition.</li>
+<li>our cloud service is being queried with millions of cosine similarity computations, write X cosine computations into hardware and use them.</li>
+</ul>
 <!-- Problem this runs into is 'over' specialisation? What if we were wrong? How can we undo the decision? -->
 
-<p>Or, an oracle looks through the operations being done in our network (multi resolution low level &ndash; addition, exp, &hellip; &ndash; and high level &ndash; svd, QP, &hellip;) and replaces approximations with the closest op. Error of that op still tracked.</p>
-<p><hr><h1>  real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources.
-Having to learn and predict with the same set of minimal resources. Use for prediction now, and use for consolidation later?</p>
-<ul>
-<li>Aligning delayed signals with each other and rewards.</li>
-<li>Sharing resources for learning and inference. Might not be able to do both at the same time&hellip;</li>
-<li>
-<h2>Predictive processing. Error correcting (surfing uncertainty)</h2>
-</li>
-</ul>
+<p>In general, an oracle looks at the operations being done in our network (multi resolution low level &ndash; addition, exp, &hellip; <em>hardware</em> &ndash; and high level &ndash; svd, QP, &hellip; <em>software</em>) and replaces approximations with the closest op. Error of that op could still be tracked.</p>
+<p><hr><h1>  sharing-symmetry</h1>How does the symmetry in a dataset/problem get reflected in the functions learned that solve said problem?</p>
+<p>Why do we even care about invariance? A definition of a high level representation is could be that the more signals (except for the one we care about) a variable is invariant to, the higher level it is.</p>
+<h4>Weight sharing and invariance</h4>
+<p>Are there clever ways to share weights so that our networks are invariant to other transforms? Which transforms do we even want to be invariant to?</p>
+<p>Given that <a href="https://arxiv.org/abs/1706.01427">relation networks</a> share weights across each relation, what is it we are invariant to?</p>
+<h4>A toolkit for different problems</h4>
+<p>If we knew the symmetries present in our data, rotational, translational, ?,
+and we had different &lsquo;layers&rsquo; that were invariant to these operations we could easily tailor deep networks to our problem.</p>
+<h4>Approximate invariance</h4>
+<p>Rather that building invariance into our network, eg avg pooled cnns -&gt; local translational invariance, how can we make it easier to learn these invariances from the data?</p>
+<h4>Jacobians</h4>
+<p>Invariance is invariably a statement about the jacobian of a function. If a function is invariant to x the we know that df/dy = 0. So can we find structure and/or symmetry in the jacobians of our neural networkds that helps us understand what they have learned? Alternatively, can we impose structure on the jacobian to regularise for different invariances?</p>
+<h4>Noether&rsquo;s theorem</h4>
+<p>Noether&rsquo;s theorem states (roughly and with a few caveats) that if a functional is invariant to some transform then there is some underlying conserved quantity.
+Can this logic be applied to weight sharing in neural networks? What does a convolutional neural network conserve?</p>
+<p><hr><h1>  real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources. Main problems;</p>
+<h4>Aligning delayed signals/rewards</h4>
+<p>Image that the vision system might process info within 0.1ms, but the auditory system processed it in 0.5ms. How can we align these two pieces of information, to build a full model of our environment?
+And, given that there was a delay in when; we percived, and acted, recieved (/percieved) a reward how can we assign credit to act single choice we made in between?</p>
+<h5>Shared resources</h5>
+<p>Imagine a system that has to learn and predict with the same set of minimal resources.
+An obvious strategy might be to: predict now, consolidate/learn later? Which seems familiar?</p>
+<h4>Complex functions</h4>
+<p>Processing complex functions cause a delay in response. A way around this is to attempt to predict the future and your next step (do the computation early rather than reactively).
+This also allows correction/response to happen faster, as we dont need to percieve what is going on (if we are right), we can just focus on where we predicted wrong and allocate attention/compute there.</p>
 <p><hr><h1>  falsifying-hypotheses</h1>Falsification is ???&hellip;</p>
 <p>The ability to generate informative queries can save a lot of compute (ref?).</p>
 <ul>
@@ -79,12 +110,9 @@ How can we learn complex functions (without having to &hellip; resources)</p>
 <li>some descrption of what it uses to label a input, the method, how. what it pays attention to and how it processes it.</li>
 <li>?</li>
 </ul>
-<p><hr><h1>  top-down-attention</h1>Deep learning needs to see the same dataset many times, and eventually is finds the patterns.</p>
-<p>We have the ability to learn from a single example. How is this possible? </p>
-<p><hr><h1>  life-long-learning</h1>
-<hr><h1>  zero-one-shot</h1>One-shot learning. Learning from a single example.
-Zero-shot learning. Making a damn good guess.</p>
-<p><hr><h1>  annotated-data</h1>Supervised learning requires annotated data!
+<p><hr><h1>  top-down-attention</h1>
+<hr><h1>  life-long-learning</h1>
+<hr><h1>  annotated-data</h1>Supervised learning requires annotated data!
 This means: data is where the value is at. So, what incentives are there to open data to the public? None. Unless, ?.</p>
 <p>Possible (half) solution?
 A cheaper way to annotate data. Hierarchical label structures? Interactive exploration of data (that is also fun)?</p>
@@ -248,19 +276,20 @@ However, can we be smarter in designing our system to reflect the computations d
 <p>Embedding different logics into representations.</p>
 <p>How does representation/structure effect function!</p>
 <p>Embedding relations, memory, &hellip; into distributed (linear?) representations</p>
-<p><hr><h1>  deep-learning</h1>Deep learning is a meta algorithm for learning. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and stochastic gradient descent to update each layer.
-Long story short, it works. So let&rsquo;s apply this approach to as many domains as possible.</p>
-<p>There are many functions that are not currently differentiable,</p>
+<p><hr><h1>  deep-learning</h1>Deep learning is really a meta algorithm. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and stochastic gradient descent to update each layer.
+Long story short, it works (as long as you have a lot of labelled data).</p>
+<p>So let&rsquo;s apply this approach to as many domains as possible. But, there are some functions that are not differentiable,</p>
 <ul>
 <li>random variables</li>
 <li>discrete variables</li>
-<li>trees (diff boundary trees), Graphs</li>
+<li>trees (diff boundary trees), graphs</li>
 <li>unknown (ie RL setting)</li>
 </ul>
-<p>Examples; OptNet, MuProp, ?</p>
-<p>differentiable indexing.
-differentiable sparse gating</p>
-<p>What does differentiability buy us?</p>
+<!-- Examples; MuProp, ?
+
+differentiable indexing.
+differentiable sparse gating -->
+
 <p><hr><h1>  creative-exploration</h1>What is creativity?
 What is the optimal way to explore?
 What are the limits and costs?</p>

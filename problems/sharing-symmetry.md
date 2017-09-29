@@ -1,3 +1,13 @@
+How does the symmetry in a dataset/problem get reflected in the functions learned that solve said problem?
+
+Why do we even care about invariance? A definition of a high level representation is could be that the more signals (except for the one we care about) a variable is invariant to, the higher level it is.
+
+#### Weight sharing and invariance
+
+Are there clever ways to share weights so that our networks are invariant to other transforms? Which transforms do we even want to be invariant to?
+
+Given that [relation networks](https://arxiv.org/abs/1706.01427) share weights across each relation, what is it we are invariant to?
+
 #### A toolkit for different problems
 
 If we knew the symmetries present in our data, rotational, translational, ?,
@@ -6,10 +16,6 @@ and we had different 'layers' that were invariant to these operations we could e
 #### Approximate invariance
 
 Rather that building invariance into our network, eg avg pooled cnns -> local translational invariance, how can we make it easier to learn these invariances from the data?
-
-#### Weight sharing
-
-
 
 #### Jacobians
 
