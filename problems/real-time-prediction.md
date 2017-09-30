@@ -5,7 +5,7 @@ Humans evolved in a world where we needed to make predictions quickly, given lit
 Image that the vision system might process info within 0.1ms, but the auditory system processed it in 0.5ms. How can we align these two pieces of information, to build a full model of our environment?
 And, given that there was a delay in when; we percived, and acted, recieved (/percieved) a reward how can we assign credit to act single choice we made in between?
 
-##### Shared resources
+#### Shared resources
 
 Imagine a system that has to learn and predict with the same set of minimal resources.
 An obvious strategy might be to: predict now, consolidate/learn later? Which seems familiar?
