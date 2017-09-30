@@ -1,17 +1,23 @@
-Fundamentally, learning must be distributed because compute and memory must be distributed. Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing.
-Typically, a computers architecture abstracts away the need to consider this.
-However, can we be smarter in designing our system to reflect the computations done in learning.
+Fundamentally, learning must be distributed because compute and memory must be distributed. (Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing)
+Typically, programming languages are designed to abstract us away from this. However, can we be smarter in designing our system to reflect the computations done in learning.
 
 <!-- distributed in space or time or ??  memory in space == memory in time? -->
 
 
-- TPU, GPU,
-- neuromorphic computing
+#### Efficient communication
+
+Since we have distributed the compute, we need to collect and communicate .
+
+Compress data before communicating (but at the lowest level possible)? 
+Each node/agent/? At the lowest level, the 'code' would be rather limited? Want to be able to tailor?
+??? 
+
+#### Inhomogenous compute
 
 
-Not just the compute needs to be distributed, but the data will already be distributed.
+Note that if compute is distributed, then data will also need to be distributed.
 
-- Federated optimisation.
+* [Federated optimisation](https://arxiv.org/abs/1511.03575)
 
 
 What if;

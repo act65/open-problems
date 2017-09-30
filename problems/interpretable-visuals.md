@@ -2,8 +2,8 @@ It is hard to get an intuitive understanding of what has been learned.
 
 Current tools for this are;
 
-- saliency/propagate gradients back,
-- ?
+* saliency/propagate gradients back,
+* ?
 
 but they are underwhelming.
 
