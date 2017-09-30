@@ -60,8 +60,10 @@ i think there might be a couple separate problems here
 <ul>
 <li>Training networks with networks. Distillation, multi-modal target matching, eyes teaching proprioception.</li>
 </ul>
-<p><hr><h1>  disentangled-features</h1>
-<hr><h1>  learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
+<p><hr><h1>  disentangled-features</h1>In the ideal case we could apply unsupervised learning to a dataset and get back a model of the true generatve process.</p>
+<p>However, our current best approach, DL, can only learn correlations. So we are left with finding the patterns</p>
+<p>Possible to learn more than correlations without interferance? Possibly, if we have ??? (Bernhards thingy &ndash; ternary relations).</p>
+<p><hr><h1>  learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
 How can we learn complex functions (without having to &hellip; resources)</p>
 <ul>
 <li>Curriculum, (two types? target and capacity?)</li>
@@ -270,8 +272,12 @@ Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
 <p>Current wisdom hints that local and heirarchical function approximations are !!, but ?
 * The ReLU is discontinuous, is that important?</p>
 <p>Why is it that (convolutional) neural networks work so well? Hierarchical, local, discontinuous, ?. </p>
-<p><hr><h1>  life-long-learning</h1>
-<hr><h1>  functional-loss</h1>Loss functions are usually given to us or tailored for a specific job. Is there some new representation of loss functions that allows;</p>
+<p><hr><h1>  life-long-learning</h1>Life long learining is hard because as we learn new things, we need to make space for these new things(finite storage).
+So we must selectively forget irrelevant details.</p>
+<p>In the ideal case we would rework our entire memory to include the new data we have recieved and attempt to compress this to more efficient remember as much as possible.</p>
+<p>Aka online learning? What is the difference?
+Not only do we care about a inite memory footprint, but reusing/transfering knowledge from the past.</p>
+<p><hr><h1>  functional-loss</h1>Loss functions are usually given to us or tailored for a specific job. Is there some new representation of loss functions that allows;</p>
 <h4>Learning the loss function.</h4>
 <p>Sometimes it can be hard to write down what we want to optimise, if we could just show some examples of our metric then we could learn that and optimise it? <a href="https://arxiv.org/abs/1406.2661">GANs</a> seem to be an example of this.</p>
 <h4>Decomposition.</h4>
@@ -335,8 +341,13 @@ Ultimately we would like to tune performance given the requirement of the applic
 It would be cool to frame this as some sort of marketplace, where resources are traded according to some currency.</p>
 <h4>A conserved quantity?</h4>
 <p>Is there some underlying quantity that is being conserved while we tradeoff the resouces? Similar to have gravitational poential energy can be traded for kinetic energy, &hellip; What is traded when we trade accuracy for speed?</p>
-<p><hr><h1>  correlated-samples</h1>
-<hr><h1>  top-down-attention</h1>
+<p><hr><h1>  correlated-samples</h1>Pretty much every ML algorithm you come accross has an often over looked assumption, that the dataset has been constructed from IID samples from the true data distribution. This is pretty much impossible to achieve in practice and there will always be some bias in the dataset (possibly just from the sampling, but more likely due to how it was constructed).</p>
+<p>Game palying (typically with RL) &hellip; this problem as &hellip;?</p>
+<p>Another setting where we see this is <a href="https://arxiv.org/abs/1511.03575">Federated optimisation</a>.</p>
+<p>Related to line-long-learning?</p>
+<!-- However, people seem to be good at learning from highly correlated inputs (I actually dont think this is true). I think we use a trick to help us out, we generally have some idea of the space of plausible inputs-outputs and thus we can simulate/imagine the other inputs we are not seeing. -->
+
+<p><hr><h1>  top-down-attention</h1>
 <hr><h1>  curse-of-dimensionality</h1>
 <hr></p>
 </div>
