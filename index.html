@@ -235,15 +235,10 @@ Optimising optimisers</p>
 <p>Embedding different logics into representations.</p>
 <p>How does representation/structure effect function!</p>
 <p>Embedding relations, memory, &hellip; into distributed (linear?) representations</p>
-<p><hr><h1>  falsifying-hypotheses</h1>Falsification is ???&hellip;</p>
-<p>The ability to generate informative queries can save a lot of compute (ref?).</p>
-<ul>
-<li>experiment design</li>
-<li>hypothesis generation</li>
-<li>active learning</li>
-</ul>
-<p>Counterfactuals and falsification</p>
-<p>Ideal case is that we have some oracle (maybe physics for experiment design, a database for query generation, &hellip;) that is expensive to call. Given what a learner knows, its next call to the oracle should be to falsify its leading hypothesis.</p>
+<p><hr><h1>  falsifying-hypotheses</h1>
+Imagine that we have some oracle (maybe physics for experiment design, a database for query generation, &hellip;) that is expensive to call. Given what we )the learner) know, our next call to the oracle should be to falsify our leading hypothesis. <!-- (about ???) --></p>
+<p>Falsification is at the very heart of good science: generate plausible and testable hypotheses, try your hardest to prove them wrong. Keep the remaining hypotheses and repeat. 
+In machine learning this process also seems to go by another name, active learning: How can you generate maximally informative queries.</p>
 <p><hr><h1>  interpretable-visuals</h1>It is hard to get an intuitive understanding of what has been learned.</p>
 <p>Current tools for this are;</p>
 <ul>
@@ -294,19 +289,25 @@ Imagine some system, where agents cooperate and compete. Cooperation of competit
 <p>The composition of two loss functions is ?</p>
 <p>My goal is A, your goal is B, A and B are similar, let&rsquo;s make babies.
 My goal is X, your goal is Y, Y is orthogonal to my X, stay out of my way.</p>
-<p><hr><h1>  sketching-models</h1>What if there was a high level language for describing what a NN does/has learn? It could then make sense to efficiently communicate this, or to store it in compressed form, or &hellip;?</p>
-<p>Passing around models as a first class function. WHat about composing different learned models?</p>
-<p>Given enough trained models, and their respective data. I could make sense to learn a sketch of each!?</p>
-<p>More related to first class models/nets.</p>
-<h2>Meta-cognitive nets.</h2>
-<p>Each networks/predictor should have;</p>
+<p><hr><h1>  sketching-models</h1>What if there was a high level language for describing what a NN does/has learned? It could then make sense to communicate this, or to store it in compressed form, or &hellip;?</p>
+<p>Given enough trained models, and their respective data. It could make sense to learn a sketch of each!?</p>
+<h4>A meta representation of a neural network</h4>
+<p>Each &lsquo;network&rsquo; should have;</p>
 <ul>
-<li>a callable fn f:x-&gt;y.</li>
-<li>a sketch of the inputs, x that it was trained on.</li>
-<li>some belief/knwledge about which labels is it good at. and which data is requires to get better at others.</li>
-<li>some descrption of what it uses to label a input, the method, how. what it pays attention to and how it processes it.</li>
-<li>?</li>
+<li>a callable fn f:x-&gt;y (most likely a parameterised network)</li>
+<li>a sketch of the inputs and outputs, (x, y) that it was trained on (some sort of generative model).</li>
+<li>some belief/knowledge about which labels is it good at. And which data is requires to get better at others.</li>
+<li>some descrption/embedding of how it labels a input, the method. What it pays attention to and how it processes it. (this needs to be some sort of graph?)</li>
 </ul>
+<h4>First class networks</h4>
+<p>Can we pass around models as first class functions? </p>
+<ul>
+<li>What about composing different learned models?</li>
+<li>Sketching/compressing a learned model into ???</li>
+<li></li>
+</ul>
+<h4>Generating networks</h4>
+<p>If we can represent a network as just some data structre, then it makes sense to be able to generate one.</p>
 <p><hr><h1>  identifying-structure</h1>Can we adapt our computations to the structure in our data?
 We could adaptively choose the hardware/representations we are using based upon operations we are calculating.</p>
 <p>For example: online optimisation of the processing of a NN to make it more efficient. Writing often used processes into hardware.</p>
