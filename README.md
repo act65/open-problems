@@ -1,4 +1,4 @@
-Open problems. Largely biased by what I find interesting and have happened to stumbled over.
+Open problems. Largely biased by what I find interesting and have happened to stumble over.
 
 What about;
 
