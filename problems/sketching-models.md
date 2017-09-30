@@ -1,18 +1,24 @@
-What if there was a high level language for describing what a NN does/has learn? It could then make sense to efficiently communicate this, or to store it in compressed form, or ...?
+What if there was a high level language for describing what a NN does/has learned? It could then make sense to communicate this, or to store it in compressed form, or ...?
 
-Passing around models as a first class function. WHat about composing different learned models?
+Given enough trained models, and their respective data. It could make sense to learn a sketch of each!?
 
-Given enough trained models, and their respective data. I could make sense to learn a sketch of each!?
+#### A meta representation of a neural network
 
+Each 'network' should have;
 
-More related to first class models/nets.
+* a callable fn f:x->y (most likely a parameterised network)
+* a sketch of the inputs and outputs, (x, y) that it was trained on (some sort of generative model).
+* some belief/knowledge about which labels is it good at. And which data is requires to get better at others.
+* some descrption/embedding of how it labels a input, the method. What it pays attention to and how it processes it. (this needs to be some sort of graph?)
 
-## Meta-cognitive nets.
+#### First class networks
 
-Each networks/predictor should have;
+Can we pass around models as first class functions? 
 
-* a callable fn f:x->y.
-* a sketch of the inputs, x that it was trained on.
-* some belief/knwledge about which labels is it good at. and which data is requires to get better at others.
-* some descrption of what it uses to label a input, the method, how. what it pays attention to and how it processes it.
-* ?
+* What about composing different learned models?
+* Sketching/compressing a learned model into ???
+* 
+
+#### Generating networks
+
+If we can represent a network as just some data structre, then it makes sense to be able to generate one.
