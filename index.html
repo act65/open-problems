@@ -71,18 +71,19 @@ How can we learn complex functions (without having to &hellip; resources)</p>
 </ul>
 <p>What do we mean by complicated?</p>
 <p>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</p>
-<p><hr><h1>  distributed-learning</h1>Fundamentally, learning must be distributed because compute and memory must be distributed. Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing.
-Typically, a computers architecture abstracts away the need to consider this.
-However, can we be smarter in designing our system to reflect the computations done in learning.</p>
+<p><hr><h1>  distributed-learning</h1>Fundamentally, learning must be distributed because compute and memory must be distributed. (Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing)
+Typically, programming languages are designed to abstract us away from this. However, can we be smarter in designing our system to reflect the computations done in learning.</p>
 <!-- distributed in space or time or ??  memory in space == memory in time? -->
 
+<h4>Efficient communication</h4>
+<p>Since we have distributed the compute, we need to collect and communicate .</p>
+<p>Compress data before communicating (but at the lowest level possible)? 
+Each node/agent/? At the lowest level, the &lsquo;code&rsquo; would be rather limited? Want to be able to tailor?
+??? </p>
+<h4>Inhomogenous compute</h4>
+<p>Note that if compute is distributed, then data will also need to be distributed.</p>
 <ul>
-<li>TPU, GPU,</li>
-<li>neuromorphic computing</li>
-</ul>
-<p>Not just the compute needs to be distributed, but the data will already be distributed.</p>
-<ul>
-<li>Federated optimisation.</li>
+<li><a href="https://arxiv.org/abs/1511.03575">Federated optimisation</a></li>
 </ul>
 <p>What if;
 - inhomogenous compute, how can each node contribute most effectively? (related to multi-agent-systems?)
@@ -198,11 +199,10 @@ and we had different &lsquo;layers&rsquo; that were invariant to these operation
 <h4>Noether&rsquo;s theorem</h4>
 <p>Noether&rsquo;s theorem states (roughly and with a few caveats) that if a functional is invariant to some transform then there is some underlying conserved quantity.
 Can this logic be applied to weight sharing in neural networks? What does a convolutional neural network conserve?</p>
-<p><hr><h1>  creatively-exploring</h1>What is creativity?
-What is the optimal way to explore?
-What are the limits and costs?</p>
-<p>Explore-exploit tradeoff.</p>
-<p>Related? Creating diverse samples/examples</p>
+<p><hr><h1>  creatively-exploring</h1>When we are searching for a plausible solution what are some good heuristics?
+A kind of non-local diversity seems like a good idea. But how should these diverse queries be generated? This is what I would define as creativity; the ability to cheaply generate plausible and diverse canidates.</p>
+<!-- Explore-exploit tradeoff. -->
+
 <p><hr><h1>  reasoning-and-relations</h1>Computers can easily reason about symbols. (With the advent of deep learning) Computers can learn concepts and attach them to symbols. Thus computers can reason about learned concepts. The final step: learn to reason about learned concepts.</p>
 <p>If reasoning is the manipulation of learned concepts, then learning to reason would be: learning different operations/functions to compose, reduce, add, intersect, &hellip; learned concepts. See <a href="https://arxiv.org/abs/1707.03389">SCAN</a> for the possible solution.</p>
 <p><hr><h1>  resource-constrained-settings</h1>Right now deep learning only works with lots of data, lots of compute, (and lots of patience&hellip;).
