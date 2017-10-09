@@ -1,4 +1,4 @@
-Can we adapt our computations to the structure in our data?
+Can we adapt our computations to manipulate the structure in our data?
 We could adaptively choose the hardware/representations we are using based upon operations we are calculating.
 
 For example: online optimisation of the processing of a NN to make it more efficient. Writing often used processes into hardware.

@@ -1,12 +1,8 @@
-What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.
+Progress in learning (especially in unsupervised settings) is likely to be made through our ability to specify domain specific priors. This is because it is not possible to have a universally efficient algorithms.
 
-- Adversarial examples.
-- Interpreting learned ...
+What we need is better, more flexible and efficient, ways to specify arbitrary priors on our models. [Adversarial autoencoders](https://arxiv.org/abs/1511.05644) are an example of this, where we are able to specify priors by example. 
 
-Progress in unsupervised learning is likely to be made through our ability to specify domain specific priors (such as ???). This is because it is not possible to have a universally smart algol (see ???).
+Why do we care? Priors allow us to forgo having to learn potentially complicated relationships and take the priors as given. Assumptions to build on. Thus we should expect better efficiency, in data, in compute, in errors, ... assuming our priors are correct. But, what about when our priors are not correct? How will we know?
 
-What we need is better, more flexible and efficient (in compute, data ???), way to specify arbitrary priors on our models.
+What domains do we really care about and need to find better priors? How transferable are priors between different settings?
 
-Relatedly, what domains do we really care about and need to find better priors?
-
-Priors can ? models in a few different ways; loss/regularisation, layers, topological structure, weight sharing, ?
