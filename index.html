@@ -27,15 +27,10 @@
 <div class="container">
 <h1>  better-priors</h1>
 
-<p>What are their downfalls? How can we make them more efficient? What is it that they are doing that is important? Answers to these questions should help us build better learners.</p>
-<ul>
-<li>Adversarial examples.</li>
-<li>Interpreting learned &hellip;</li>
-</ul>
-<p>Progress in unsupervised learning is likely to be made through our ability to specify domain specific priors (such as ???). This is because it is not possible to have a universally smart algol (see ???).</p>
-<p>What we need is better, more flexible and efficient (in compute, data ???), way to specify arbitrary priors on our models.</p>
-<p>Relatedly, what domains do we really care about and need to find better priors?</p>
-<p>Priors can ? models in a few different ways; loss/regularisation, layers, topological structure, weight sharing, ?</p>
+<p>Progress in learning (especially in unsupervised settings) is likely to be made through our ability to specify domain specific priors. This is because it is not possible to have a universally efficient algorithms.</p>
+<p>What we need is better, more flexible and efficient, ways to specify arbitrary priors on our models. <a href="https://arxiv.org/abs/1511.05644">Adversarial autoencoders</a> are an example of this, where we are able to specify priors by example. </p>
+<p>Why do we care? Priors allow us to forgo having to learn potentially complicated relationships and take the priors as given. Assumptions to build on. Thus we should expect better efficiency, in data, in compute, in errors, &hellip; assuming our priors are correct. But, what about when our priors are not correct? How will we know?</p>
+<p>What domains do we really care about and need to find better priors? How transferable are priors between different settings?</p>
 <p><hr><h1>  multi-agent-systems</h1>Why is this important?
 We want modular learning system, this means we need multiple loss fns with different learners.
 But how should learners interact to minimize a loss. What happens if some learner want to maximise the loss as well.</p>
@@ -63,16 +58,20 @@ i think there might be a couple separate problems here
 <p><hr><h1>  disentangled-features</h1>In the ideal case we could apply unsupervised learning to a dataset and get back a model of the true generatve process.</p>
 <p>However, our current best approach, DL, can only learn correlations. So we are left with finding the patterns</p>
 <p>Possible to learn more than correlations without interferance? Possibly, if we have ??? (Bernhards thingy &ndash; ternary relations).</p>
-<p><hr><h1>  learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. And as such the require far more knowledge (/intelligence).
-How can we learn complex functions (without having to &hellip; resources)</p>
+<p><hr><h1>  learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. 
+How can we learn complex functions (while remaining efficient?).</p>
+<p>What make a function complex? 
+<em> The inter-relatedness of its input variables? So a function with many independent/separable components is not complex? 
+</em> the length of dependencies,
+<em> the raw amount of possible cases/knowledge/information
+</em> ?</p>
+<p>Firstly, we will need to construct learnable classes of complex function, however, this is the problem! To capture many different types of complex function we need &hellip; ??? exponentially large space. Thus complex functions are harder to approximate as there are more candidates to search through. We need more priors to help constrain this&hellip;</p>
+<p>There are some approaches to this problem and they largely boil down to something related to Occam&rsquo;s razor. Start simple and build on that.</p>
 <ul>
 <li>Curriculum, (two types? target and capacity?)</li>
-<li>
-<h2>long-term and deep,</h2>
-</li>
+<li>long-term and deep,</li>
+<li>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</li>
 </ul>
-<p>What do we mean by complicated?</p>
-<p>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</p>
 <p><hr><h1>  distributed-learning</h1>Fundamentally, learning must be distributed because compute and memory must be distributed. (Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing)
 Typically, programming languages are designed to abstract us away from this. However, can we be smarter in designing our system to reflect the computations done in learning.</p>
 <!-- distributed in space or time or ??  memory in space == memory in time? -->
@@ -314,7 +313,7 @@ My goal is X, your goal is Y, Y is orthogonal to my X, stay out of my way.</p>
 </ul>
 <h4>Generating networks</h4>
 <p>If we can represent a network as just some data structre, then it makes sense to be able to generate one.</p>
-<p><hr><h1>  identifying-structure</h1>Can we adapt our computations to the structure in our data?
+<p><hr><h1>  identifying-structure</h1>Can we adapt our computations to manipulate the structure in our data?
 We could adaptively choose the hardware/representations we are using based upon operations we are calculating.</p>
 <p>For example: online optimisation of the processing of a NN to make it more efficient. Writing often used processes into hardware.</p>
 <p>Structural adaptation of a model based on structure/patterns in the data.</p>
