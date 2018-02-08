@@ -22,3 +22,6 @@ Can we pass around models as first class functions?
 #### Generating networks
 
 If we can represent a network as just some data structure, then it makes sense to be able to generate one.
+
+
+This program does X, this program does Y. Can compose them together to do Z. Effectively need a type system...!

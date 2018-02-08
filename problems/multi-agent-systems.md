@@ -1,26 +1,14 @@
-Why is this important?
-We want modular learning system, this means we need multiple loss fns with different learners.
-But how should learners interact to minimize a loss. What happens if some learner want to maximise the loss as well.
+Collaboration and competition.
+
+## Modeling your opponent
+
+How smart do you think your opponent is. Lazy.
+
+Why? Greater efficiency can be made by making assumptions (assuming they are right...). Stereotyping different players behaviors/strategies. Effectively it allows us to make more assumptions and do a better job of modeling the roll out accurately, thus reducing search space.
 
 
-- Dynamical systems
-- Mechanism design
-- Mutli-objective optimisation
-- Type systems(?)
-- Modular and first class networks
-<!-- how does this relate to reasoning??? -->
-
-<!--
-i think there might be a couple separate problems here
-- stability in optimising multiple losses
-- manipulating modules
-- sharing? transfer? ??
--
--->
-
-Ensembles?
-
-Related to learning by curriculum and transfer learning. Problems can often be decomposed into a set of smaller sub problems
+## Explaining reasoning (teaching another)
 
 
-* Training networks with networks. Distillation, multi-modal target matching, eyes teaching proprioception.
+
+## Receiving reasoning (working with another)

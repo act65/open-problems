@@ -4,7 +4,7 @@ Why do we even care about invariance? A definition of a high level representatio
 
 The problem is;
 * one of efficiency? The more symmetry a network has (do CNNs have more symmetry than NNs) the less data required to train it (assuming the symmetry is also represented in that data).
-* Interpretability. 
+* Interpretability.
 
 #### Weight sharing and invariance
 

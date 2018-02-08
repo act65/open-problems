@@ -13,7 +13,7 @@ Tradeoff between;
 
 #### Marketplace
 
-Most interestingly, can we let algorithms find their own optimal tradeoffs, by giving them these tradeoffs as regularisers? Like [Adaptive computation time](https://arxiv.org/abs/1603.08983). 
+Most interestingly, can we let algorithms find their own optimal tradeoffs, by giving them these tradeoffs as regularisers? Like [Adaptive computation time](https://arxiv.org/abs/1603.08983).
 It would be cool to frame this as some sort of marketplace, where resources are traded according to some currency.
 
 #### A conserved quantity?

@@ -4,9 +4,9 @@ What about;
 
 * disentangling representations..
 * a richer type system for learning systems.
-* reuseable atoms
+* reusable atoms
 * learning independent meaningful modules
 * many output classes
 * combining multimodal inputs
 * neuromorphic chips
-- 
+* keeping it simple. simplicity/beauty as a prior
