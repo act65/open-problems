@@ -28,11 +28,16 @@
 <h1>  better-priors</h1>
 
 <p>Progress in learning (especially in unsupervised settings) is likely to be made through our ability to specify domain specific priors. This is because it is not possible to have a universally efficient algorithms.</p>
+<ul>
+<li>Want a nice easy way, a language, to specify priors.</li>
+<li>What different types of prior are there?</li>
+</ul>
 <p>What we need is better, more flexible and efficient, ways to specify arbitrary priors on our models. <a href="https://arxiv.org/abs/1511.05644">Adversarial autoencoders</a> are an example of this, where we are able to specify priors by example.</p>
 <p>Why do we care? Priors allow us to forgo having to learn potentially complicated relationships and take the priors as given. Assumptions to build on. Thus we should expect better efficiency, in data, in compute, in errors, &hellip; assuming our priors are correct. But, what about when our priors are not correct? How will we know?</p>
 <p>What domains do we really care about and need to find better priors? How transferable are priors between different settings?</p>
 <p>Can be in many forms. Transfer, a model, &hellip; ???</p>
 <h2>The &lsquo;right&rsquo; geometry</h2>
+<p>(which priors to include in optimisation)</p>
 <p>What is the right geometry for learning?</p>
 <!-- Pics of vector fields ![]() -->
 
@@ -42,22 +47,32 @@
 <p>Embedding different logics into representations.</p>
 <p>How does representation/structure effect function!</p>
 <p>Embedding relations, memory, &hellip; into distributed (linear?) representations</p>
-<p><hr><h1>  correlated-samples</h1>Pretty much every ML algorithm you come across has an often over looked assumption, that the dataset has been constructed from IID samples from the true data distribution. This is pretty much impossible to achieve in practice and there will always be some bias in the dataset (possibly just from the sampling, but more likely due to how it was constructed).</p>
-<p>Game playing (typically with RL) &hellip; this problem as &hellip;?</p>
-<p>Another setting where we see this is <a href="https://arxiv.org/abs/1511.03575">Federated optimisation</a>. (but not correlated in time, but in source?)</p>
-<p>Related to life-long-learning?</p>
-<!-- However, people seem to be good at learning from highly correlated inputs (I actually dont think this is true). I think we use a trick to help us out, we generally have some idea of the space of plausible inputs-outputs and thus we can simulate/imagine the other inputs we are not seeing. -->
-
-<p>When the input distribution is a moving target, samples are correlated in time or ?.</p>
-<p>Multi-agent learning
-Online learning
-Reinforcement learning</p>
-<p>Self-play. Only explore subspace (related to diversity)</p>
+<h4>Approximators</h4>
+<p>(which priors to include in representation)</p>
+<p>Can we find an representation that approximates arbitrary functions easily?
+Which representations can approximate the types of &lsquo;natural&rsquo; functions we care about?</p>
+<p>What are the best algorithmic atoms to build out of?
+Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
+<p>A neural network is the combination of a few distinct ideas.</p>
+<ul>
+<li>Hierarchical layers</li>
+<li>Connectionist</li>
+<li>Linear parameterisation</li>
+</ul>
+<p>Why are neural networks better than SVMs, or RBFs, or &hellip;? Are NNs best for every application?</p>
+<p>Current wisdom hints that local and hierarchical function approximations are !!, but ?</p>
+<ul>
+<li>The ReLU is discontinuous, is that important?</li>
+</ul>
+<p>Why is it that (convolutional) neural networks work so well? Hierarchical, local, discontinuous, ?.</p>
+<p><hr><h1>  credit-assignment</h1>Want to assign credit to Jane for her part in NASA sending a rocket to the moon. But how?</p>
+<p>Imagine we had an approximate version of backprop. Then, similar to approximation and optimisation we could and generalisation error</p>
+<p>Has issues with discrete things.</p>
 <p><hr><h1>  curse-of-dimensionality</h1>
-<hr><h1>  disentangled-features</h1>In the ideal case we could apply unsupervised learning to a dataset and get back a model of the true generatve process.</p>
+<hr><h1>  disentangled-features</h1>In the ideal case we could apply unsupervised learning to a dataset and get back a model of the true generative process.</p>
 <p>However, our current best approach, DL, can only learn correlations. So we are left with finding the patterns</p>
 <p>Possible to learn more than correlations without interference? Possibly, if we have ??? (Bernhards thingy &ndash; ternary relations).</p>
-<p>Want this to be somewhat modeled after grammaticalization.</p>
+<p>Want this to be somewhat modeled after grammaticalization and related to compositionality/merge.</p>
 <p><hr><h1>  distributed-learning</h1>Fundamentally, learning must be distributed because compute and memory must be distributed. (Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing)
 Typically, programming languages are designed to abstract us away from this. However, can we be smarter in designing our system to reflect the computations done in learning.</p>
 <!-- distributed in space or time or ??  memory in space == memory in time? -->
@@ -98,11 +113,13 @@ In machine learning this process also seems to go by another name, <strong>activ
 <p>Some mixture of tracking prediction error and a skeptical view of explanations? Reminds me of (curiosity guided exploration in agent-based settings).
 I have vaguely heard of people talk about surprise and attention to details as being good heuristics for spotting ignorance.</p>
 <p>First need to identify what we do know. Knowledge about knowledge.</p>
-<h2>Creative exploration</h2>
+<h2>Creativity</h2>
 <p>When we are searching for a plausible solution what are some good heuristics?
 A kind of non-local diversity seems like a good idea. But how should these diverse queries be generated? This is what I would define as creativity; the ability to cheaply generate plausible and diverse candidates.</p>
 <p>Efficient search comes very close to the explore-exploit tradeoff. Recently we have seen some work achieving efficient exploration through curiosity (and in some sense surprise) guided actions (see <a href="https://pathak22.github.io/noreward-rl/">this</a>).</p>
 <p>Given this, an alternative definition of creativity could be the generation of new queries that were considered, a priori, to be implausible/not thought of, but in hindsight are effective (aka a good guess? what more is guiding this?)</p>
+<p><hr><h1>  general-intelligence</h1>
+<hr><h1>  generalisation</h1>Symbolic versus learned?</p>
 <p><hr><h1>  graph-representations</h1>In deep learning all information is represented in finite dimensional vectors spaces/arrays. Can we generalise this to graphs (where an array is just
  a uniform grid graph)?</p>
 <p>Why bother? Graphs allow us to represent relations, between nodes. This extra layer of information allows us to represent .</p>
@@ -173,20 +190,6 @@ Not only do we care about a finite memory footprint, but reusing/transferring kn
 * ?</p>
 <p><hr><h1>  learned-reasoning</h1>Computers can easily reason about symbols. (With the advent of deep learning &ndash; not true&hellip;) Computers can learn concepts and attach them to symbols. Thus computers can reason about learned concepts. The final step: learn to reason about learned concepts.</p>
 <p>If reasoning is the manipulation of learned concepts, then learning to reason would be: learning different operations/functions to compose, reduce, add, intersect, &hellip; learned concepts. See <a href="https://arxiv.org/abs/1707.03389">SCAN</a> for the possible solution.</p>
-<p><hr><h1>  learning-complex-functions</h1>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs. 
-How can we learn complex functions (while remaining efficient?).</p>
-<p>What make a function complex? 
-<em> The inter-relatedness of its input variables? So a function with many independent/separable components is not complex? 
-</em> the length of dependencies,
-<em> the raw amount of possible cases/knowledge/information
-</em> ?</p>
-<p>Firstly, we will need to construct learnable classes of complex function, however, this is the problem! To capture many different types of complex function we need &hellip; ??? exponentially large space. Thus complex functions are harder to approximate as there are more candidates to search through. We need more priors to help constrain this&hellip;</p>
-<p>There are some approaches to this problem and they largely boil down to something related to Occam&rsquo;s razor. Start simple and build on that.</p>
-<ul>
-<li>Curriculum, (two types? target and capacity?)</li>
-<li>long-term and deep,</li>
-<li>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</li>
-</ul>
 <p><hr><h1>  meta-learning</h1>Aka hyper parameter optimisation?</p>
 <h2>Learning to learn</h2>
 <p>If computers are ever going to take over the world, they will need to be able to learn to learn. This kind of self-optimisation, is what I hold dear and I believe that makes us &lsquo;intelligent&rsquo;.
@@ -203,61 +206,65 @@ Learning is great, as we are currently finding out, however, there have been a f
 <h2>Learning to teach</h2>
 <p>Remembering memory
 Optimising optimisers</p>
-<p><hr><h1>  multi-agent-systems</h1>Why is this important?
-We want modular learning system, this means we need multiple loss fns with different learners.
-But how should learners interact to minimize a loss. What happens if some learner want to maximise the loss as well.</p>
+<p><hr><h1>  multi-agent-systems</h1>Collaboration and competition.</p>
+<h2>Modeling your opponent</h2>
+<p>How smart do you think your opponent is. Lazy.</p>
+<p>Why? Greater efficiency can be made by making assumptions (assuming they are right&hellip;). Stereotyping different players behaviors/strategies. Effectively it allows us to make more assumptions and do a better job of modeling the roll out accurately, thus reducing search space.</p>
+<h2>Explaining reasoning (teaching another)</h2>
+<h2>Receiving reasoning (working with another)</h2>
+<p><hr><h1>  real-world</h1>In the real world, data is messy, complicated, &hellip; and it doesn&rsquo;t come how you want it.</p>
+<h2>Complexity</h2>
+<p>Most real world problems are a little more complicated than differentiating between pictures of cats and dogs.
+How can we learn complex functions (while remaining efficient?).</p>
+<p>What make a function complex?</p>
 <ul>
-<li>Dynamical systems</li>
-<li>Mechanism design</li>
-<li>Mutli-objective optimisation</li>
-<li>Type systems(?)</li>
-<li>Modular and first class networks
-<!-- how does this relate to reasoning??? --></li>
+<li>The inter-relatedness of its input variables? So a function with many independent/separable components is not complex?</li>
+<li>the length of dependencies,</li>
+<li>the raw amount of possible cases/knowledge/information</li>
+<li>?</li>
 </ul>
-<!--
-i think there might be a couple separate problems here
-- stability in optimising multiple losses
-- manipulating modules
-- sharing? transfer? ??
--
--->
+<p>Firstly, we will need to construct learnable classes of complex function, however, this is the problem! To capture many different types of complex function we need &hellip; ??? exponentially large space. Thus complex functions are harder to approximate as there are more candidates to search through. We need more priors to help constrain this&hellip;</p>
+<p>There are some approaches to this problem and they largely boil down to something related to Occam&rsquo;s razor. Start simple and build on that.</p>
+<ul>
+<li>Curriculum, (two types? target and capacity?)</li>
+<li>long-term and deep,</li>
+<li>Constructing more complex fns from simple ones. Starting with the simplest hypotheses.</li>
+</ul>
+<h2>Correlated samples</h2>
+<p>Pretty much every ML algorithm you come across has an often over looked assumption, that the dataset has been constructed from IID samples from the true data distribution. This is pretty much impossible to achieve in practice and there will always be some bias in the dataset (possibly just from the sampling, but more likely due to how it was constructed).</p>
+<p>Game playing (typically with RL) &hellip; this problem as &hellip;?</p>
+<p>Another setting where we see this is <a href="https://arxiv.org/abs/1511.03575">Federated optimisation</a>. (but not correlated in time, but in source?)</p>
+<p>Related to life-long-learning?</p>
+<!-- However, people seem to be good at learning from highly correlated inputs (I actually dont think this is true). I think we use a trick to help us out, we generally have some idea of the space of plausible inputs-outputs and thus we can simulate/imagine the other inputs we are not seeing. -->
 
-<p>Ensembles?</p>
-<p>Related to learning by curriculum and transfer learning. Problems can often be decomposed into a set of smaller sub problems</p>
-<ul>
-<li>Training networks with networks. Distillation, multi-modal target matching, eyes teaching proprioception.</li>
-</ul>
-<p><hr><h1>  real-time-prediction</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources. Main problems;</p>
-<p>Aka compute, memory and ??? (name for delay in computing) constraints</p>
+<p>When the input distribution is a moving target, samples are correlated in time or ?.</p>
+<p>Multi-agent learning
+Online learning
+Reinforcement learning</p>
+<p>Self-play. Only explore subspace (related to diversity)</p>
+<h2>Noise</h2>
+<p>?</p>
+<p><hr><h1>  robots</h1>Humans evolved in a world where we needed to make predictions quickly, given little information and resources. Robots will need to act in this same world.</p>
+<!-- Aka problems caused (indirectly) by compute, memory and latency constraints -->
+
 <h4>Aligning delayed signals/rewards</h4>
 <p>Image that the vision system might process info within 0.1ms, but the auditory system processed it in 0.5ms. How can we align these two pieces of information, to build a full model of our environment?
-And, given that there was a delay in when; we percived, and acted, recieved (/percieved) a reward how can we assign credit to act single choice we made in between?</p>
+And, given that there was a delay in when; we perceived, and acted, received (/perceived) a reward how can we assign credit to act single choice we made in between?</p>
 <h4>Shared resources</h4>
 <p>Imagine a system that has to learn and predict with the same set of minimal resources.
+Limited by max power usage (aka a need for attention!?)
 An obvious strategy might be to: predict now, consolidate/learn later? Which seems familiar?</p>
 <p>Explore-exploit-consolidate
 You have a limited resource; energy supply rate (and/or compute) but you must act in the real world (explore/exploit) while also learning (consolidating).</p>
-<h4>Complex functions</h4>
-<p>Processing complex functions cause a delay in response. A way around this is to attempt to predict the future and your next step (do the computation early rather than reactively).
-This also allows correction/response to happen faster, as we dont need to percieve what is going on (if we are right), we can just focus on where we predicted wrong and allocate attention/compute there.</p>
-<p><hr><h1>  resource-constrained-settings</h1>Right now deep learning only works with lots of data, lots of compute, (and lots of patience&hellip;).
-Given that we are seeing DL massively scaled across the internet, small wins in efficiency can make a big deal.</p>
-<h4>Small compute</h4>
-<p>Can we save compute by</p>
-<h4>Small memory</h4>
-<p>Online algorithms.</p>
-<h4>Small data</h4>
-<p>?</p>
-<h2>Big data</h2>
-<p>Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, &hellip;
-Making ML only for the rich and powerful. We need &hellip;</p>
-<p>Dont want to have to train on multi epochs when the size of the dataset is large.
-Want sublinear costs in; memory, compute, data,</p>
+<h4>Low latency</h4>
+<p>Processing complex functions cause a delay in response.
+Way around this;</p>
 <ul>
-<li>Mixture of experts</li>
-<li>Active learning</li>
+<li>to attempt to predict the future and your next step (do the computation early rather than reactively).</li>
+<li>A quick guess with slower more accurate corrections?</li>
 </ul>
-<p>When you have a lot of data&hellip; Unsupervised/reinforcement!</p>
+<p>This also allows correction/response to happen faster, as we dont need to perceive what is going on (if we are right), we can just focus on where we predicted wrong and allocate attention/compute there.</p>
+<p>Google&rsquo;s solution, offload computation to data centers with TPUs&hellip;</p>
 <p><hr><h1>  sample-complexity</h1>Deep learning needs to see the same dataset many times, eventually learns some useful patterns, but not before wandering here and there to checkout what it would be like to do a crappy job.</p>
 <h4>One-shot</h4>
 <p>We (seem to) have the ability to learn from a single example. How is this possible? Can we get computers to do it?</p>
@@ -288,11 +295,22 @@ differentiable indexing.
 differentiable sparse gating -->
 
 <p>These only make sense in light of adding better priors to make learning cheaper/more interpretable/?</p>
+<h2>Big data</h2>
+<p>Given that we are seeing DL massively scaled across the internet, small wins in efficiency can make a big deal.</p>
+<p>Machine learning is about finding patterns in data. Over the last few years datasets have been rapidly increasing in size, and for good reason. The larger the dataset, the more robust and accurate the learned algorithm. However, as these datasets increase in size we start to encounter new problems. Requiring $$$ for electricity, &hellip;
+Making ML only for the rich and powerful. We need &hellip;</p>
+<p>Dont want to have to train on multi epochs when the size of the dataset is large.
+Want sublinear costs in; memory, compute, data,</p>
+<ul>
+<li>Mixture of experts</li>
+<li>Active learning</li>
+</ul>
+<p>When you have a lot of data&hellip; Unsupervised/reinforcement!</p>
 <p><hr><h1>  sharing-symmetry</h1>How does the symmetry in a dataset/problem get reflected in the functions learned that solve said problem?</p>
 <p>Why do we even care about invariance? A definition of a high level representation is could be that the more signals (except for the one we care about) a variable is invariant to, the higher level it is.</p>
 <p>The problem is;
 <em> one of efficiency? The more symmetry a network has (do CNNs have more symmetry than NNs) the less data required to train it (assuming the symmetry is also represented in that data).
-</em> Interpretability. </p>
+</em> Interpretability.</p>
 <h4>Weight sharing and invariance</h4>
 <p>Are there clever ways to share weights so that our networks are invariant to other transforms? Which transforms do we even want to be invariant to?</p>
 <p>Given that <a href="https://arxiv.org/abs/1706.01427">relation networks</a> share weights across each relation, what is it we are invariant to?</p>
@@ -325,6 +343,7 @@ Can this be applied to weight sharing in neural networks? What does a convolutio
 </ul>
 <h4>Generating networks</h4>
 <p>If we can represent a network as just some data structure, then it makes sense to be able to generate one.</p>
+<p>This program does X, this program does Y. Can compose them together to do Z. Effectively need a type system&hellip;!</p>
 <p><hr><h1>  specifying-goals</h1>Approximating the oracle.
 Getting training signal.
 Formalising what we want.
@@ -392,8 +411,7 @@ Imagine some system, where agents cooperate and compete. Cooperation of competit
 <p>The composition of two loss functions is ?</p>
 <p>My goal is A, your goal is B, A and B are similar, let&rsquo;s make babies.
 My goal is X, your goal is Y, Y is orthogonal to my X, stay out of my way.</p>
-<p><hr><h1>  top-down-attention</h1>
-<hr><h1>  trade-offs</h1>There are tradeoffs everywhere in machine learning.
+<p><hr><h1>  trade-offs</h1>There are tradeoffs everywhere in machine learning.
 You can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or XX for sanity&hellip;
 For each given application, the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
 Ultimately we would like to tune performance given the requirement of the application.</p>
@@ -404,26 +422,10 @@ Ultimately we would like to tune performance given the requirement of the applic
 <em> number of parameters and &ldquo;findability&rdquo; of a good configuration.
 </em> how much compute do I (the learned algorithm) need to spend to achieve a given level of accuracy.</p>
 <h4>Marketplace</h4>
-<p>Most interestingly, can we let algorithms find their own optimal tradeoffs, by giving them these tradeoffs as regularisers? Like <a href="https://arxiv.org/abs/1603.08983">Adaptive computation time</a>. 
+<p>Most interestingly, can we let algorithms find their own optimal tradeoffs, by giving them these tradeoffs as regularisers? Like <a href="https://arxiv.org/abs/1603.08983">Adaptive computation time</a>.
 It would be cool to frame this as some sort of marketplace, where resources are traded according to some currency.</p>
 <h4>A conserved quantity?</h4>
 <p>Is there some underlying quantity that is being conserved while we tradeoff the resouces? Similar to have gravitational poential energy can be traded for kinetic energy, &hellip; What is traded when we trade accuracy for speed?</p>
-<p><hr><h1>  universal-approximators</h1>Can we find an representation that approximates arbitrary functions easily?
-Which representations can approximate the types of &lsquo;natural&rsquo; functions we care about?</p>
-<p>What are the best algorithmic atoms to build out of?
-Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
-<p>A neural network is the combination of a few distinct ideas.</p>
-<ul>
-<li>Hierarchical layers</li>
-<li>Connectionist</li>
-<li>Linear parameterisation</li>
-</ul>
-<p>Why are neural networks better than SVMs, or RBFs, or &hellip;? Are NNs best for every application?</p>
-<p>Current wisdom hints that local and hierarchical function approximations are !!, but ?</p>
-<ul>
-<li>The ReLU is discontinuous, is that important?</li>
-</ul>
-<p>Why is it that (convolutional) neural networks work so well? Hierarchical, local, discontinuous, ?.</p>
 <hr>
 </div>
 </body>
