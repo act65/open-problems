@@ -1,5 +1,7 @@
 Humans evolved in a world where we needed to make predictions quickly, given little information and resources. Main problems;
 
+Aka compute, memory and ??? (name for delay in computing) constraints
+
 #### Aligning delayed signals/rewards
 
 Image that the vision system might process info within 0.1ms, but the auditory system processed it in 0.5ms. How can we align these two pieces of information, to build a full model of our environment?
@@ -9,6 +11,10 @@ And, given that there was a delay in when; we percived, and acted, recieved (/pe
 
 Imagine a system that has to learn and predict with the same set of minimal resources.
 An obvious strategy might be to: predict now, consolidate/learn later? Which seems familiar?
+
+
+Explore-exploit-consolidate
+You have a limited resource; energy supply rate (and/or compute) but you must act in the real world (explore/exploit) while also learning (consolidating).
 
 #### Complex functions
 
