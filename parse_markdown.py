@@ -7,6 +7,7 @@ import jinja2
 import markdown
 
 import os
+import io
 
 TEMPLATE = """<!DOCTYPE html>
 <html>
@@ -60,10 +61,13 @@ def main(args=None):
     md = ''
     for fname in os.listdir('problems'):
         path = os.path.join('problems', fname)
-        with open(path) as f:
+        print(path)
+        with io.open(path, encoding="utf-8") as f:
             md += '<h1>  {}</h1>'.format(fname[:-3])
             md += f.read()
             md += '\n<hr>'
+    print('Done')
+    # print(md)
 
     extensions = ['extra', 'smarty']
     html = markdown.markdown(md, extensions=extensions, output_format='html5')
