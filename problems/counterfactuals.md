@@ -1,6 +1,6 @@
 Deep learning needs to see the same dataset many times, eventually learns some useful patterns, but not before wandering here and there to checkout what it would be like to do a crappy job.
 
-#### One-shot
+#### One-shot (not really a counterfactual...)
 
 We (seem to) have the ability to learn from a single example. How is this possible? Can we get computers to do it?
 
@@ -10,11 +10,3 @@ Most definitions of learning (e.g. PAC) include some guarantee that a single exa
 
 <!-- How do current methods get around this? -->
 <!-- Could be closer to memory, decompose new input into things already known, memorise signal over them. Then learning would be the how to decompose. Aka one-shot == memory. -->
-
-#### Zero-shot
-
-If one-shot learning is: "Learning from a single example" then zero-shot learning would be: "making a damn good guess".
-
-Given examples about X, can we learn about Y?
-
-A possible hypothesis for how we manage this is that we hypothesise about causes, we create models/explanations, which are occasionally accurate and generalise wonderfully.

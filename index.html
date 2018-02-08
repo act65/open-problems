@@ -74,6 +74,16 @@ Orthogonal ???s. Polynomials, vectors, graphs, ?,</p>
 <h2>Explaining reasoning (teaching another)</h2>
 <h2>Receiving reasoning (working with another)</h2>
 <p><hr>
+<h1>  Counterfactuals</h1>Deep learning needs to see the same dataset many times, eventually learns some useful patterns, but not before wandering here and there to checkout what it would be like to do a crappy job.</p>
+<h4>One-shot (not really a counterfactual&hellip;)</h4>
+<p>We (seem to) have the ability to learn from a single example. How is this possible? Can we get computers to do it?</p>
+<p>Trivially, this is just memorisation. The interesting part comes from trying to achieve a sub-linear memory footprint, aka some sort of online compression. And this is where we get back to deep learning. We need to pick some method to compress these examples we are shooting, and deep learning seems like a decent candidate, except for its data complexity.</p>
+<p>Most definitions of learning (e.g. PAC) include some guarantee that a single example should not change the output of the learning algorithm by more than epsilon. This seems to preclude the ability to do one-shot learning?</p>
+<!-- How do current methods get around this? -->
+
+<!-- Could be closer to memory, decompose new input into things already known, memorise signal over them. Then learning would be the how to decompose. Aka one-shot == memory. -->
+
+<p><hr>
 <h1>  Credit Assignment</h1>Want to assign credit to Jane for her part in NASA sending a rocket to the moon. But how?</p>
 <p>Imagine we had an approximate version of backprop. Then, similar to approximation and optimisation we could and generalisation error</p>
 <p>Has issues with discrete things.</p>
@@ -137,23 +147,10 @@ A kind of non-local diversity seems like a good idea. But how should these diver
 <h1>  General Intelligence</h1>
 <hr>
 <h1>  Generalisation</h1>Symbolic versus learned?</p>
-<p><hr>
-<h1>  Graph Representations</h1>In deep learning all information is represented in finite dimensional vectors spaces/arrays. Can we generalise this to graphs (where an array is just
- a uniform grid graph)?</p>
-<p>Why bother? Graphs allow us to represent relations, between nodes. This extra layer of information allows us to represent .</p>
-<h4>Composition</h4>
-<p>If we have two graphs representing idea <strong>1</strong> and <strong>2</strong>, then how can we efficiently compose these to integrate their knowledge?
-Trivially, we could just join where they share similar nodes? But what if we are working with nodes embedded in some real space, where it is non trivial to check similarity? Or, ? what if <strong>1</strong> and <strong>2</strong> are not embedded in the same space, how is it possible to integrate them (it&rsquo;s not?)?</p>
-<h4>Compression</h4>
-<p>What about compressing a graph? Are there more general connectivity and signal patterns at some lower resoultion? Alternatively, can we generate higher resolution graphs from lower resolution ones? </p>
-<p>How is compressing a graph the same/different to clustering it?</p>
-<h4>Hierarchical</h4>
-<p>What if we could sketch a graph with a fixed length vector? We could imagine a graph where each node contains an embedding of some other graph. </p>
-<p>Can we construct hierarchical graph, graphs within graphs.</p>
-<h4>Construction</h4>
-<p>How can leared systems interact with, output, read from, &hellip; graph structures. Adjacency matrix feels hack. Want to build into computational primitives, need better libraries?</p>
-<h4>Graph signal processing</h4>
-<p>?</p>
+<h4>Zero-shot</h4>
+<p>If one-shot learning is: &ldquo;Learning from a single example&rdquo; then zero-shot learning would be: &ldquo;making a damn good guess&rdquo;.</p>
+<p>Given examples about X, can we learn about Y?</p>
+<p>A possible hypothesis for how we manage this is that we hypothesise about causes, we create models/explanations, which are occasionally accurate and generalise wonderfully.</p>
 <p><hr>
 <h1>  Historical Experiments</h1>In economics &hellip; by chance we see a natural experiment.</p>
 <p>The conditions necessary for this are</p>
@@ -292,20 +289,6 @@ Way around this;</p>
 <p>This also allows correction/response to happen faster, as we dont need to perceive what is going on (if we are right), we can just focus on where we predicted wrong and allocate attention/compute there.</p>
 <p>Google&rsquo;s solution, offload computation to data centers with TPUs&hellip;</p>
 <p><hr>
-<h1>  Sample Complexity</h1>Deep learning needs to see the same dataset many times, eventually learns some useful patterns, but not before wandering here and there to checkout what it would be like to do a crappy job.</p>
-<h4>One-shot</h4>
-<p>We (seem to) have the ability to learn from a single example. How is this possible? Can we get computers to do it?</p>
-<p>Trivially, this is just memorisation. The interesting part comes from trying to achieve a sub-linear memory footprint, aka some sort of online compression. And this is where we get back to deep learning. We need to pick some method to compress these examples we are shooting, and deep learning seems like a decent candidate, except for its data complexity.</p>
-<p>Most definitions of learning (e.g. PAC) include some guarantee that a single example should not change the output of the learning algorithm by more than epsilon. This seems to preclude the ability to do one-shot learning?</p>
-<!-- How do current methods get around this? -->
-
-<!-- Could be closer to memory, decompose new input into things already known, memorise signal over them. Then learning would be the how to decompose. Aka one-shot == memory. -->
-
-<h4>Zero-shot</h4>
-<p>If one-shot learning is: &ldquo;Learning from a single example&rdquo; then zero-shot learning would be: &ldquo;making a damn good guess&rdquo;.</p>
-<p>Given examples about X, can we learn about Y?</p>
-<p>A possible hypothesis for how we manage this is that we hypothesise about causes, we create models/explanations, which are occasionally accurate and generalise wonderfully.</p>
-<p><hr>
 <h1>  Scaling Deep Learining</h1>Deep learning is really a meta algorithm. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and finally use stochastic gradient descent to update each layer.
 Long story short, it works (as long as you have a lot of labelled data, compute and patience).</p>
 <p>So let&rsquo;s apply this approach to as many domains as possible. But, there are functions that are not differentiable;</p>
@@ -334,6 +317,21 @@ Want sublinear costs in; memory, compute, data,</p>
 <li>Active learning</li>
 </ul>
 <p>When you have a lot of data&hellip; Unsupervised/reinforcement!</p>
+<h2>Graph representations</h2>
+<p>In deep learning all information is represented in finite dimensional vectors spaces/arrays. Can we generalise this to graphs (where an array is just
+ a uniform grid graph)?</p>
+<p>Why bother? Graphs allow us to represent relations, between nodes. This extra layer of information allows us to represent .</p>
+<h4>Composition</h4>
+<p>If we have two graphs representing idea <strong>1</strong> and <strong>2</strong>, then how can we efficiently compose these to integrate their knowledge?
+Trivially, we could just join where they share similar nodes? But what if we are working with nodes embedded in some real space, where it is non trivial to check similarity? Or, ? what if <strong>1</strong> and <strong>2</strong> are not embedded in the same space, how is it possible to integrate them (it&rsquo;s not?)?</p>
+<h4>Compression</h4>
+<p>What about compressing a graph? Are there more general connectivity and signal patterns at some lower resolution? Alternatively, can we generate higher resolution graphs from lower resolution ones?</p>
+<p>How is compressing a graph the same/different to clustering it?</p>
+<h4>Hierarchical</h4>
+<p>What if we could sketch a graph with a fixed length vector? We could imagine a graph where each node contains an embedding of some other graph.</p>
+<p>Can we construct hierarchical graph, graphs within graphs.</p>
+<h4>Construction</h4>
+<p>How can learned systems interact with, output, read from, &hellip; graph structures. Adjacency matrix feels hack. Want to build into computational primitives, need better libraries?</p>
 <p><hr>
 <h1>  Sharing Symmetry</h1>How does the symmetry in a dataset/problem get reflected in the functions learned that solve said problem?</p>
 <p>Why do we even care about invariance? A definition of a high level representation is could be that the more signals (except for the one we care about) a variable is invariant to, the higher level it is.</p>
