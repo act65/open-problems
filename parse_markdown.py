@@ -63,11 +63,10 @@ def main(args=None):
         path = os.path.join('problems', fname)
         print(path)
         with io.open(path, encoding="utf-8") as f:
-            md += '<h1>  {}</h1>'.format(fname[:-3])
+            md += '\n<h1>  {}</h1>'.format(fname[:-3].replace('-', ' ').title())
             md += f.read()
             md += '\n<hr>'
     print('Done')
-    # print(md)
 
     extensions = ['extra', 'smarty']
     html = markdown.markdown(md, extensions=extensions, output_format='html5')

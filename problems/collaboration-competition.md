@@ -1,5 +1,7 @@
 Collaboration and competition.
 
+Under which circumstances will two agents collaborate or compete?
+
 ## Modeling your opponent
 
 How smart do you think your opponent is. Lazy.
