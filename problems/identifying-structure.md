@@ -1,3 +1,7 @@
+Learning is an iterative process, mistakes are made and lessons are learned. As we learn we will want to adapt to/exploit this new knowledge.
+
+## ?
+
 Can we adapt our computations to manipulate structure in our data?
 We could adaptively choose the hardware/representations we are using based upon operations we are calculating.
 
@@ -13,3 +17,5 @@ For example;
 <!-- Problem this runs into is 'over' specialisation? What if we were wrong? How can we undo the decision? -->
 
 In general, an oracle looks at the operations being done in our network (multi resolution low level -- addition, exp, ... _hardware_ -- and high level -- svd, QP, ... _software_) and replaces approximations with the closest op. Error of that op could still be tracked.
+
+## ?

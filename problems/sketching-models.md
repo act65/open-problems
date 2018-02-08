@@ -23,5 +23,16 @@ Can we pass around models as first class functions?
 
 If we can represent a network as just some data structure, then it makes sense to be able to generate one.
 
-
 This program does X, this program does Y. Can compose them together to do Z. Effectively need a type system...!
+
+
+#### Retired networks
+
+Oh, I just found this old network lying around. What does it do??!
+Especially important when thousands of hours have been spent training it.
+
+But, can just test... feed data and see what happens?
+
+Meta-data for a NN?
+
+Alternatively, as a proof of work when a full test is too expensive!?

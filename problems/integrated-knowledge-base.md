@@ -1,3 +1,6 @@
+Related to real-world?
+There exists a lot of knowledge. To make use of it we need it to be integrated/connected/(?). 
+
 ## Leverage existing knowledge
 
 
