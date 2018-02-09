@@ -2,11 +2,10 @@ Open problems. Largely biased by what I find interesting and have happened to st
 
 What about;
 
-* disentangling representations..
-* a richer type system for learning systems.
-* reusable atoms
-* learning independent meaningful modules
+* reusable atoms and learning independent meaningful modules
 * many output classes
 * combining multimodal inputs
-* neuromorphic chips
-* keeping it simple. simplicity/beauty as a prior
+* Keeping it simple. simplicity/beauty as a prior. iterative construction. measure beauty?
+* Adaptive systems???
+* hierarchical clustering!?
+* ?
