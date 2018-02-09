@@ -45,4 +45,15 @@ Self-play. Only explore subspace (related to diversity)
 
 ## Noise
 
-?
+
+
+## Privacy
+
+...
+
+
+## Aggregated/siloed data
+
+...
+Need standards?
+
