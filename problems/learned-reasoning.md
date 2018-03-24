@@ -15,3 +15,7 @@ When should symbols be atteched and the reasoned with? As early as possible, or 
 #### Reasoning with language
 
 Currently research considers reasoning with logic, or with a model. Language is one of the ways humans reason (also have visual/spatial reasoning?). I would call language an approximate type of reasoning. What are the benefits of this sort of system? What are the flaws?
+
+#### Reasoning about reasoning
+
+Aka meta reasoning. 
