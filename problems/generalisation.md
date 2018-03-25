@@ -14,8 +14,8 @@ Not only do we care if a problem is learnable from a given function class, but w
 
 #### When to generalise knowledge
 
-Irregular verbs are an interesting example of something humans seem to learn easily, yet seems to be a very hard problem. 
+Irregular verbs are an interesting example of something humans seem to learn easily, yet seems to be a very hard problem.
 
-There is an underlying pattern to regular verbs, add a suffix to modify the tense (walk, walked), but irregular very break this rule and must be memorised individually (run, ran). 
+There is an underlying pattern to regular verbs, add a suffix to modify the tense (walk, walked), but irregular very break this rule and must be memorised individually (run, ran).
 
 This is a hard problem. If we are trying to learn a rule with exceptions, from noisy data, how can we know whether a data point represents an exception or noise? When should we try to learna more general model of a subset of the data and when should we memorise inputs?
