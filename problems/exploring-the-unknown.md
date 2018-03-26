@@ -16,6 +16,8 @@ First need to identify what we do know. Knowledge about knowledge.
 When we are searching for a plausible solution what are some good heuristics?
 A kind of non-local diversity seems like a good idea. But how should these diverse queries be generated? This is what I would define as creativity; the ability to cheaply generate plausible and diverse candidates.
 
-Efficient search comes very close to the explore-exploit tradeoff. Recently we have seen some work achieving efficient exploration through curiosity (and in some sense surprise) guided actions (see [this](https://pathak22.github.io/noreward-rl/)).
+An alternative definition of creativity could be the generation of new queries that were considered, a priori, to be implausible/not thought of, but in hindsight are effective (aka a good guess? what more is guiding this?)
 
-Given this, an alternative definition of creativity could be the generation of new queries that were considered, a priori, to be implausible/not thought of, but in hindsight are effective (aka a good guess? what more is guiding this?)
+## Curiosity
+
+Efficient search comes very close to the explore-exploit tradeoff. Recently we have seen some work achieving efficient exploration through curiosity (and in some sense surprise) guided actions (see [this](https://pathak22.github.io/noreward-rl/)).
