@@ -1,3 +1,9 @@
+---
+layout: post
+title: Identifying structure
+category: openproblem
+---
+
 Learning is an iterative process, mistakes are made and lessons are learned. As we learn we will want to adapt to/exploit this new knowledge.
 
 ## ?

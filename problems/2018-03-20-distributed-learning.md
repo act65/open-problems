@@ -1,3 +1,9 @@
+---
+layout: post
+title: Distributed learning
+category: openproblem
+---
+
 Fundamentally, learning must be distributed because compute and memory must be distributed. (Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing)
 Typically, programming languages are designed to abstract us away from this. However, can we be smarter in designing our system to reflect the computations done in learning.
 
@@ -8,9 +14,9 @@ Typically, programming languages are designed to abstract us away from this. How
 
 Since we have distributed the compute, we need to collect and communicate .
 
-Compress data before communicating (but at the lowest level possible)? 
+Compress data before communicating (but at the lowest level possible)?
 Each node/agent/? At the lowest level, the 'code' would be rather limited? Want to be able to tailor?
-??? 
+???
 
 #### Inhomogenous compute
 

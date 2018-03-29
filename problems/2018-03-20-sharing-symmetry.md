@@ -1,3 +1,9 @@
+---
+layout: post
+title: Sharing and symmetry
+category: openproblem
+---
+
 How does the symmetry in a dataset/problem get reflected in the functions learned that solve said problem?
 
 Why do we even care about invariance? A definition of a high level representation is could be that the more signals (except for the one we care about) a variable is invariant to, the higher level it is.

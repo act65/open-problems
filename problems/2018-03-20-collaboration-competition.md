@@ -1,3 +1,9 @@
+---
+layout: post
+title: Collaboration and competition
+category: openproblem
+---
+
 Collaboration and competition.
 
 Under which circumstances will two agents collaborate or compete?
@@ -18,4 +24,4 @@ Why? Greater efficiency can be made by making assumptions (assuming they are rig
 
 #### Asymmetric information
 
-Tax law example. 
+Tax law example.

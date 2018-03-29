@@ -1,3 +1,9 @@
+---
+layout: post
+title: Specifying goals
+category: openproblem
+---
+
 Approximating the oracle.
 Getting training signal.
 Formalising what we want.

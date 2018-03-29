@@ -1,3 +1,9 @@
+---
+layout: post
+title: Generalisation
+category: openproblem
+---
+
 Symbolic versus learned?
 
 #### Zero-shot

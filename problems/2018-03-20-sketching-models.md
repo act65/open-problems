@@ -1,3 +1,9 @@
+---
+layout: post
+title: Sketching models
+category: openproblem
+---
+
 What if there was a high level language for describing what a NN does/has learned? It could then make sense to communicate this, or to store it in compressed form, or ...?
 
 Given enough trained models, and their respective data. It could make sense to learn a sketch of each!?

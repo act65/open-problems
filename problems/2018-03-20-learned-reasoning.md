@@ -1,3 +1,9 @@
+---
+layout: post
+title: Reasoning
+category: openproblem
+---
+
 What is reasoning? How does it improve learning?
 
 Allows access to other structured knowledge?

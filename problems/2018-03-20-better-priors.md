@@ -1,3 +1,9 @@
+---
+layout: post
+title: Better priors
+category: openproblem
+---
+
 Progress in learning (especially in unsupervised settings) is likely to be made through our ability to specify domain specific priors. This is because it is not possible to have a universally efficient algorithms.
 
 - Want a nice easy way, a language, to specify priors.

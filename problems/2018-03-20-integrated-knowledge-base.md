@@ -1,3 +1,9 @@
+---
+layout: post
+title: Integrated knowledge bases
+category: openproblem
+---
+
 Relate to real-world?
 There exists a lot of knowledge. To make use of it we need it to be integrated/connected/(?).
 

@@ -1,3 +1,9 @@
+---
+layout: post
+title: Scaling deep learning
+category: openproblem
+---
+
 Deep learning is really a meta algorithm. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and finally use stochastic gradient descent to update each layer.
 Long story short, it works (as long as you have a lot of labelled data, compute and patience).
 

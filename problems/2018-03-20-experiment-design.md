@@ -1,3 +1,9 @@
+---
+layout: post
+title: Experiment design
+category: openproblem
+---
+
 ## Falsifying hypotheses
 
 Imagine that we have some oracle (maybe physics for experiment design, a database for query generation, ...) that is expensive to call. Given what we (the learner) know, our next call to the oracle should be to falsify our leading hypothesis. <!-- (about ???) -->

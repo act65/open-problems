@@ -1,3 +1,9 @@
+---
+layout: post
+title: Disentangled features
+category: openproblem
+---
+
 In the ideal case we could apply unsupervised learning to a dataset and get back a model of the true generative process.
 
 However, our current best approach, DL, can only learn correlations. So we are left with finding the patterns

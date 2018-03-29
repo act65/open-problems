@@ -1,3 +1,9 @@
+---
+layout: post
+title: Learning in the real world
+category: openproblem
+---
+
 In the real world, data is messy, complicated, ... and it doesn't come how you want it.
 
 ## Complexity
@@ -56,4 +62,3 @@ Self-play. Only explore subspace (related to diversity)
 
 ...
 Need standards?
-

@@ -1,3 +1,9 @@
+---
+layout: post
+title: Exploring the unknown
+category: openproblem
+---
+
 Extrapolation...
 
 ## Known unknowns

@@ -1,3 +1,9 @@
+---
+layout: post
+title: Counterfactuals
+category: openproblem
+---
+
 Deep learning needs to see the same dataset many times, eventually learns some useful patterns, but not before wandering here and there to checkout what it would be like to do a crappy job.
 
 #### One-shot (not really a counterfactual...)

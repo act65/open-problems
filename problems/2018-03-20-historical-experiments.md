@@ -1,3 +1,9 @@
+---
+layout: post
+title: Historical experiments
+category: openproblem
+---
+
 In economics ... by chance we see a natural experiment.
 
 The conditions necessary for this are

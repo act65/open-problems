@@ -1,3 +1,9 @@
+---
+layout: post
+title: Credits assignment
+category: openproblem
+---
+
 Want to assign credit to Jane for her part in NASA sending a rocket to the moon. But how?
 
 

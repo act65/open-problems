@@ -1,3 +1,9 @@
+---
+layout: post
+title: Interpretability
+category: openproblem
+---
+
 It is hard to get an intuitive understanding of what has been learned.
 
 Current tools for this are;
