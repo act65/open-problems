@@ -9,22 +9,20 @@ Typically, programming languages are designed to abstract us away from this. How
 
 <!-- distributed in space or time or ??  memory in space == memory in time? -->
 
+- what about when models are too big to fit on a single computer?
 
 #### Efficient communication
 
 Since we have distributed the compute, we need to collect and communicate .
 
 Compress data before communicating (but at the lowest level possible)?
-Each node/agent/? At the lowest level, the 'code' would be rather limited? Want to be able to tailor?
-???
+Each node/agent/? At the lowest level, the 'code' would be rather limited? Want to be able to tailor it to local conditions?
 
 #### Inhomogenous compute
-
 
 Note that if compute is distributed, then data will also need to be distributed.
 
 * [Federated optimisation](https://arxiv.org/abs/1511.03575)
-
 
 What if;
 - inhomogenous compute, how can each node contribute most effectively? (related to multi-agent-systems?)

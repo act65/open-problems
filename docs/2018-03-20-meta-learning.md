@@ -4,9 +4,19 @@ title: Meta learning
 category: openproblem
 ---
 
-What is the problem!?
+What do we mean by metalearning? Learning at a higher level of abstraction?
+Something more general? That doesnt sound like a strong definition.
 
-Aka hyper parameter optimisation?
+What is the problem!?
+> Anywhere we use heuristics we can apply meta learning (Jeff Dean)
+
+When applied to learning, this paradigm looks like; learning to learn, learning to teach, learning hyperparameters, but when applied elsewhere ...?
+
+<!-- Closely related to better-priors? Except now we are trying to learn the priors? -->
+
+The general approach seems to be, learn across many domains and distill into a single model.
+
+[Distral](https://deepmind.com/research/publications/distral-robust-multitask-reinforcement-learning/), [Impala](https://deepmind.com/blog/impala-scalable-distributed-deeprl-dmlab-30/), ... which achieve generality by mixing gradients or batches.
 
 ## Learning to learn
 
@@ -24,6 +34,7 @@ All it really means is understanding a given learning problem in more depth so w
 
 ## Learning to teach
 
+## Hyper parameter optimisation?
 
 
 Remembering memory
