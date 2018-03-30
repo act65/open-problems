@@ -4,10 +4,22 @@ title: Scaling deep learning
 category: openproblem
 ---
 
-Deep learning is really a meta algorithm. Take a set of differentiable layers, compose them together into a hierarchy, use automatic differentiation to efficiently compute gradients w.r.t each layer and finally use stochastic gradient descent to update each layer.
-Long story short, it works (as long as you have a lot of labelled data, compute and patience).
+Deep learning is really a meta algorithm.
 
-So let's apply this approach to as many domains as possible. But, there are functions that are not differentiable;
+- Take a set of differentiable layers, compose them together into a hierarchy or some sort of topology.
+- Use automatic differentiation to efficiently compute gradients w.r.t each layer
+- Finally use stochastic gradient descent to update each layer.
+
+Long story short, it works (as long as you have a lot of labelled data and patience).
+
+So let's apply this approach to as many domains as possible. What is holding us back from scaling this to more problems?
+
+<!-- What do you do with a model once it is trained? How can you compose it with others? -->
+
+
+## Non-differentiable functions
+
+there are functions that are not differentiable;
 
 - random variables
 - discrete variables
