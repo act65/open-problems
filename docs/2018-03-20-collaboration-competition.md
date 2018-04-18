@@ -22,6 +22,10 @@ Why? Greater efficiency can be made by making assumptions (assuming they are rig
 ## Receiving reasoning (working with another)
 
 
-#### Asymmetric information
+## Asymmetric information
 
 Tax law example.
+
+## Specialsing, trade and trust!?
+
+!?!?
