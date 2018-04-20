@@ -12,3 +12,7 @@ Possible to learn more than correlations without interference? Possibly, if we h
 
 
 Want this to be somewhat modeled after grammaticalization and related to compositionality/merge.
+
+### Idependent features
+
+Can

@@ -3,24 +3,26 @@ layout: post
 title: Specifying goals
 category: openproblem
 ---
-
+<!--
 Approximating the oracle.
 Getting training signal.
 Formalising what we want.
-Communicating it to a computer.
+Communicating it to a computer. -->
+
+<img src=https://images.sciencedaily.com/2016/09/160922124408_1_900x600.jpg height=200 width=300 align="middle"></img>
+
+How do you determine if the image you are looking at is a lion? Go ahead, ...
+
+Ok, write that process down as a program. Oh... That's really hard.
+
+If we can write what we want down as a clear function/equation (aka formalise), then we can probably optimise it <side>(the constraints being computational)</side>. If not. Hmm.
+
 
 ## Learning by example
 
-Insert pic of lion.
-
-How do you determine if the image you are looking at is a lion?
-Ok, write that process down as a program. Oh... That's really hard.
-
-If we can write what we want down as a clear function/equation, then we can probably optimise it. If not. Hmm.
-
 Machine learning allows an alternative approach to specifying what we want. It allows us to 'show' the computer what we want by example. Pairs for images and their labels, ...
 
-It is not always possible to use examples to show the computer what we want, for examples learning p(x). GANs? Allow us to extend this ...
+It is not always possible to use examples to show the computer what we want, for example learning p(x). GANs? Allow us to extend this ...
 <!-- What about generators of goals? (that RL stuff?) -->
 
 In RL our goal is some game state/set of states. It seems reasonable to be able to compress this set of game states into some sort of hidden representation that we can compare against. Or communicate to others.
@@ -53,13 +55,13 @@ What about if we dont know what we want? Then we must either;
 * simulate all possible goals and then pick out the ones we like.
 
 
-What if we could specify goals using natural language.
+## Specify goals using natural language.
 
-What about the efficient specification of goals? Examples take space, equations do not.
 
-#### Learning the loss function.
 
-Sometimes it can be hard to write down what we want to optimise, if we could just show some examples of our metric then we could learn that and optimise it? [GANs](https://arxiv.org/abs/1406.2661) seem to be an example of this.
+## Efficient specification of goals?
+
+ Examples take space, equations do not.
 
 
 ## Label complexity
@@ -77,6 +79,11 @@ Projects that satisfy these wants;
 
 
 Loss functions are usually given to us or tailored for a specific job. Is there some new representation of loss functions that allows;
+
+#### Learning the loss function.
+
+Sometimes it can be hard to write down what we want to optimise, if we could just show some examples of our metric then we could learn that and optimise it? [GANs](https://arxiv.org/abs/1406.2661) seem to be an example of this.
+
 
 
 #### Decomposition.
