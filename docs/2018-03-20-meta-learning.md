@@ -41,3 +41,11 @@ All it really means is understanding a given learning problem in more depth so w
 
 Remembering memory
 Optimising optimisers
+
+#### One-shot
+
+We (seem to) have the ability to learn from a single example. How is this possible? Can we get computers to do it?
+
+Trivially, this is just memorisation. The interesting part comes from trying to achieve a sub-linear memory footprint, aka some sort of online compression. And this is where we get back to deep learning. We need to pick some method to compress these examples we are shooting, and deep learning seems like a decent candidate, except for its data complexity.
+
+Most definitions of learning (e.g. PAC) include some guarantee that a single example should not change the output of the learning algorithm by more than epsilon. This seems to preclude the ability to do one-shot learning?

@@ -1,15 +1,9 @@
 ---
 layout: post
-title: Integrated knowledge bases
+title: Online learning
 category: openproblem
 ---
 
-Relate to real-world?
-There exists a lot of knowledge. To make use of it we need it to be integrated/connected/(?).
-
-## Leverage existing knowledge
-
-?
 
 ## Life long learning
 
@@ -20,6 +14,7 @@ In the ideal case we would rework our entire memory to include the new data we h
 
 Aka online learning? What is the difference?
 Not only do we care about a finite memory footprint, but reusing/transferring knowledge from the past.
+
 
 ## Exploring incomplete databases
 

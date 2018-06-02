@@ -72,4 +72,12 @@ If we have $p_{model}$ and $p_{train}$ then we could like to be able to compose 
 
 ## What is a priors worth?
 
+
+> How much does a single prior of (say) a DNN explain its ability compared to another DNN without that same prior?
+
+***
+
+Closely related to {{site.baseurl}}/specifying_goals.
+
 > __Q6__ How much does a single prior of (say) a DNN explain its ability compared to another DNN without that same prior?
+>>>>>>> 165092df82565bffc300b42f76a207f19eaf8a92
