@@ -18,3 +18,10 @@ Better ways to visalise;
 * computations and their resource use would be good? Visualising the big Ohs?
 * the learning dynamics
 * ?
+
+
+## Explaining reasoning (teaching another)
+
+
+
+## Receiving reasoning (working with another)

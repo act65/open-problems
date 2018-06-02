@@ -72,4 +72,6 @@ If we have $p_{model}$ and $p_{train}$ then we could like to be able to compose 
 
 > How much does a single prior of (say) a DNN explain its ability compared to another DNN without that same prior?
 
-Can we
+***
+
+Closely related to {{site.baseurl}}/specifying_goals.

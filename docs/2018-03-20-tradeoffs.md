@@ -5,11 +5,23 @@ category: openproblem
 ---
 
 There are tradeoffs everywhere in machine learning.
-You can trade compute for accuracy (quality of gradient estimates, or even compute second order info), or time and memory (recompute vs remember in BPTT), or XX for sanity...
+You can trade compute for accuracy, or deep learning for sanity... (for example; you can trade the quality of gradient estimates -- batch size -- for a lower memory footprint. Or trade time and memory as in recompute vs remember in BPTT).
 For each given application, the requirements will be different. Sometimes memory is more imporant than time, sometimes vice versa.
 Ultimately we would like to tune performance given the requirement of the application.
 
-<!-- Could like to my own work on conserved quantities -->
+__Q__ What would an interface for doing this look like?
+
+$$
+Loss = resource1 + resource2 + ...\\
+Loss = \alpha_1 resource1 + \alpha_2 resource2 + ...
+$$
+
+Solution. Pick some hyperparameters $\alpha$ according to how you care about the resources and let the optimisation find a soluion.
+
+Not ideal in a few ways:
+
+- No guarantees.
+- Want to be able to do this in one shot. Rather than having to retrain given a new setting.
 
 #### New resources to trade
 

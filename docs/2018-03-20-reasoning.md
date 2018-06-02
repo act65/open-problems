@@ -4,7 +4,7 @@ title: Reasoning
 category: openproblem
 ---
 
-What is reasoning? How does it improve learning?
+What is reasoning? How does it improve learning? What problem does it solve?
 
 Allows access to other structured knowledge?
 
@@ -33,3 +33,7 @@ Fake news!
 #### Reasoning about reasoning
 
 Aka meta reasoning.
+
+## Integrated knowledge bases
+Relate to real-world?
+There exists a lot of knowledge. To make use of it we need it to be integrated/connected/(?).
