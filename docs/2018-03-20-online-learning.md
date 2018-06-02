@@ -14,3 +14,16 @@ In the ideal case we would rework our entire memory to include the new data we h
 
 Aka online learning? What is the difference?
 Not only do we care about a finite memory footprint, but reusing/transferring knowledge from the past.
+
+
+## Exploring incomplete databases
+
+What about exploring new parts of the graph? May still have ???
+Not sure how this fits in here.
+
+Propagating truth across the graph. Combinatorally generating new nodes.
+
+
+## Transfer Learning
+
+Conjecture: The advantage of an integrated knowledgebase it the ability to efficiently transfer knowledge between domains.

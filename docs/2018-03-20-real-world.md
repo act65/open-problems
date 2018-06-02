@@ -4,12 +4,13 @@ title: Learning in the real world
 category: openproblem
 ---
 
-In the real world, data is messy, complicated, ... and it doesn't come how you want it.
+In the real world, data is messy, complicated, dynamic, ...
+
+> __Q__ How can we learn complex functions from noisy and unstructured data (while remaining efficient?).
 
 ## Complexity
 
 Most real world problems are a little more complicated than differentiating between pictures of cats and dogs.
-How can we learn complex functions (while remaining efficient?).
 
 What make a function complex?
 
@@ -28,17 +29,13 @@ There are some approaches to this problem and they largely boil down to somethin
 
 ## Correlated samples
 
-Pretty much every ML algorithm you come across has an often over looked assumption, that the dataset has been constructed from IID samples from the true data distribution. This is pretty much impossible to achieve in practice and there will always be some bias in the dataset (possibly just from the sampling, but more likely due to how it was constructed).
-
-Game playing (typically with RL) ... this problem as ...?
+Most ML algorithms you come across often assume that the dataset was constructed from IID samples from the true data distribution. This is pretty much impossible to achieve in practice and there will always be some bias in the dataset <side>(possibly just from the sampling, but more likely due to how it was constructed)</side>
 
 Another setting where we see this is [Federated optimisation](https://arxiv.org/abs/1511.03575). (but not correlated in time, but in source?)
 
 Related to life-long-learning?
 
 <!-- However, people seem to be good at learning from highly correlated inputs (I actually dont think this is true). I think we use a trick to help us out, we generally have some idea of the space of plausible inputs-outputs and thus we can simulate/imagine the other inputs we are not seeing. -->
-
-
 
 When the input distribution is a moving target, samples are correlated in time or ?.
 
@@ -48,17 +45,15 @@ Reinforcement learning
 
 Self-play. Only explore subspace (related to diversity)
 
+***
 
-## Noise
+* Aggregated/siloed data
+* Noise
+* Privacy
+* Cannot control variables
+* Hidden/unobservable variables
+* ?
 
+***
 
-
-## Privacy
-
-...
-
-
-## Aggregated/siloed data
-
-...
-Need standards?
+Added problem; even if you can learn in the real world, you need to be able to make decisions when required (see [robots](?))
