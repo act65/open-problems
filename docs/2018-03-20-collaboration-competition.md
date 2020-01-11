@@ -25,3 +25,5 @@ Why? Greater efficiency can be made by making assumptions (assuming they are rig
 #### Asymmetric information
 
 Tax law example.
+
+## Collaborative exploration

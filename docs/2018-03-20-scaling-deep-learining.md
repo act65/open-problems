@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Scaling deep learning
+title: Generalising deep learning
 category: openproblem
 ---
 
@@ -35,6 +35,26 @@ differentiable sparse gating -->
 
 
 These only make sense in light of adding better priors to make learning cheaper/more interpretable/?
+
+
+## Differentiable logic / symbols / language
+
+What is reasoning? How does it improve learning?
+
+Allows access to other structured knowledge?
+
+#### Reasoning with learned concepts
+
+Computers can easily reason about symbols. (With the advent of deep learning -- not true...) Computers can learn concepts and attach them to symbols. Thus computers can reason about learned concepts.
+
+[Differentiable ILP](?)
+
+#### Learning to reason
+
+If reasoning is the manipulation of learned concepts, then learning to reason would be: learning different operations/functions to compose, reduce, add, intersect, ... learned concepts. See [SCAN](https://arxiv.org/abs/1707.03389) for the possible solution.
+
+(Learning a model! To get from A to B. [TreeQN](?))
+
 
 
 
@@ -81,3 +101,41 @@ Can we construct hierarchical graph, graphs within graphs.
 #### Construction
 
 How can learned systems interact with, output, read from, ... graph structures. Adjacency matrix feels hack. Want to build into computational primitives, need better libraries?
+
+## Metalearning
+
+What do we mean by metalearning? Learning at a higher level of abstraction?
+Something more general? That doesnt sound like a strong definition.
+
+What is the problem!?
+> Anywhere we use heuristics we can apply meta learning (Jeff Dean)
+
+When applied to learning, this paradigm looks like; learning to learn, learning to teach, learning hyperparameters, but when applied elsewhere ...?
+
+<!-- Closely related to better-priors? Except now we are trying to learn the priors? -->
+
+The general approach seems to be, learn across many domains and distill into a single model.
+
+[Distral](https://deepmind.com/research/publications/distral-robust-multitask-reinforcement-learning/), [Impala](https://deepmind.com/blog/impala-scalable-distributed-deeprl-dmlab-30/), ... which achieve generality by mixing gradients or batches.
+
+## Learning to learn
+
+If computers are ever going to take over the world, they will need to be able to learn to learn. This kind of self-optimisation, is what I hold dear and I believe that makes us 'intelligent'.
+Learning is great, as we are currently finding out, however, there have been a few different learning algorithms over the years. First nature started out with natural selection, but it is incredibly slow O(billions of years...). Evolution then learned to be more efficient at learning, it invented malleable nervous systems to handle the faster adaptation needed to survive.
+
+All it really means is understanding a given learning problem in more depth so we can include 'better' inductive biases in the optimiser.
+
+* [Automated Curriculum Learning for Neural Networks](https://arxiv.org/abs/1704.03003)
+* [Meta Networks](https://arxiv.org/pdf/1703.00837.pdf)
+* [Learning to optimize](https://doi.org/10.3200/JMBR.36.3.339-351)
+* [Learning to reinforcement learn](http://arxiv.org/abs/1611.05763)
+* [Learning to learn by gradient descent by gradient descent](http://arxiv.org/abs/1606.04474)
+* [Learning to learn without gradient descent by gradient descent](http://proceedings.mlr.press/v70/chen17e.htm)
+
+## Learning to teach
+
+## Hyper parameter optimisation?
+
+
+Remembering memory
+Optimising optimisers

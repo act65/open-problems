@@ -26,7 +26,7 @@ There are some approaches to this problem and they largely boil down to somethin
 * long-term and deep,
 * Constructing more complex fns from simple ones. Starting with the simplest hypotheses.
 
-## Correlated samples
+## Correlated samples (non IID)
 
 Pretty much every ML algorithm you come across has an often over looked assumption, that the dataset has been constructed from IID samples from the true data distribution. This is pretty much impossible to achieve in practice and there will always be some bias in the dataset (possibly just from the sampling, but more likely due to how it was constructed).
 
@@ -48,6 +48,8 @@ Reinforcement learning
 
 Self-play. Only explore subspace (related to diversity)
 
+## Fairness
+
 
 ## Noise
 
@@ -60,5 +62,27 @@ Self-play. Only explore subspace (related to diversity)
 
 ## Aggregated/siloed data
 
-...
-Need standards?
+Fundamentally, learning must be distributed because compute and memory must be distributed. (Computation and memory reduces to physics, and physics tells us there is a universal limit to information density and processing)
+Typically, programming languages are designed to abstract us away from this. However, can we be smarter in designing our system to reflect the computations done in learning.
+
+<!-- distributed in space or time or ??  memory in space == memory in time? -->
+
+- what about when models are too big to fit on a single computer?
+
+#### Efficient communication
+
+Since we have distributed the compute, we need to collect and communicate .
+
+Compress data before communicating (but at the lowest level possible)?
+Each node/agent/? At the lowest level, the 'code' would be rather limited? Want to be able to tailor it to local conditions?
+
+#### Inhomogenous compute
+
+Note that if compute is distributed, then data will also need to be distributed.
+
+* [Federated optimisation](https://arxiv.org/abs/1511.03575)
+
+What if;
+- inhomogenous compute, how can each node contribute most effectively? (related to multi-agent-systems?)
+- low communication bandwidth,
+-

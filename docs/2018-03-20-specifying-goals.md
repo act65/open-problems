@@ -4,6 +4,12 @@ title: Specifying goals
 category: openproblem
 ---
 
+How to teach.
+
+- Designing curriculums.
+- Reward shaping.
+- ?
+
 Approximating the oracle.
 Getting training signal.
 Formalising what we want.

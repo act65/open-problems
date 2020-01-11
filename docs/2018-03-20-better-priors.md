@@ -6,20 +6,32 @@ category: openproblem
 
 Progress in learning (especially in unsupervised settings or semi-supervised learning) is likely to be made through our ability to specify domain specific priors. This is because it is not possible to have a universally efficient algorithms. What we want is a flexible and efficient method (a language) to specify arbitrary priors.
 
-<side>To some rather loud people, the solution is probabilistic models and bayesian statistics.</side>
 What different types of prior are there?
 Can be in many forms. Transfer, a model, ... ??? How are they specified?
 
-[Adversarial autoencoders](https://arxiv.org/abs/1511.05644) are an interesting example of the utility of flexibility when specifying priors. The paper allows us to specify priors by example.
-
 Why do we care? Priors allow us to forgo having to learn potentially complicated relationships and take the priors as given. Assumptions to build on. Thus we should expect better efficiency, in data, in compute, in errors, ... assuming our priors are correct. But, what about when our priors are not correct? How will we know?
 
-- We could propagate error back to the prior and measure its cumulative magnitide?
-- We could put parameters in the prior and learn them (although, this is getting away from what it means to be a prior).
+## Examples
 
 What domains do we really care about and need to find better priors?
+Some examples of priors for learning.
 
-## Optimisers
+- Chemical priors
+- Heirarchical priors
+- Local priors
+- Smoothness priors
+- ?
+
+
+## Specifying a prior
+
+Want a unified language. But for now we have...
+
+- optimizers
+- initialisations
+- ?
+
+### Optimisers
 (which priors to include in optimisation)
 
 > Which priors can help us avoid poor minima and find minima that generalise well?
@@ -32,16 +44,7 @@ When we update the parameters of a model, how should we do it? Should they be pr
 
 [Implicit regularisation in deep learning](https://arxiv.org/abs/1709.01953)
 
-## Approximators
-(which priors to include in representation)
-
-<side>A prior is (like) a good initialisation.</side>
-Can we find a representation that approximates arbitrary functions easily? Probably not.
-Which representations can approximate the types of 'natural' functions we care about?
-
-What are the best algorithmic atoms to build out of? It depends on the problem.
-Polynomials, vectors, graphs, ?, Orthogonal ???s.
-
+## Case study
 > What priors do neural networks embody?
 
 A neural network is the combination of a few distinct ideas.
@@ -53,12 +56,6 @@ A neural network is the combination of a few distinct ideas.
 Why are neural networks better than SVMs, or RBFs, or ...? Are NNs best for every application?
 Why is it that (convolutional) neural networks work so well? Hierarchical, local, discontinuous, ?.
 Current wisdom hints that local and hierarchical function approximations are !!, but ?
-
-## Data
-(which priors are visible in the data)
-
-- How is my data structured and which priors are sensible?
-- How transferable are priors between different settings?
 
 ## A language a priori?
 
@@ -72,4 +69,9 @@ If we have $p_{model}$ and $p_{train}$ then we could like to be able to compose 
 
 > How much does a single prior of (say) a DNN explain its ability compared to another DNN without that same prior?
 
-Can we
+How can we evaluate a prior? We could propagate error back to the prior and measure its cumulative magnitide?
+
+
+## Occam's razor
+
+To build from simple to complex. To test simple first. ...
