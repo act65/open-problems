@@ -2,10 +2,6 @@ Open problems. Largely biased by what I find interesting and have happened to st
 
 What about;
 
-* reusable atoms and learning independent meaningful modules
-* many output classes
+* learning modular fns. disentanglement. parameter identification.
 * combining multimodal inputs
-* Keeping it simple. simplicity/beauty as a prior. iterative construction. measure beauty?
-* Adaptive systems???
-* hierarchical clustering!?
 * ?

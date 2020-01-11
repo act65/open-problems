@@ -4,7 +4,19 @@ title: Specifying goals
 category: openproblem
 ---
 
+
 <img src=https://images.sciencedaily.com/2016/09/160922124408_1_900x600.jpg height=200 width=300 align="middle"></img>
+
+How to teach.
+
+- Designing curriculums.
+- Reward shaping.
+- ?
+
+Approximating the oracle.
+Getting training signal.
+Formalising what we want.
+Communicating it to a computer.
 
 How do you determine if the image you are looking at is a lion? Go ahead, ... explain. Ok, now write that process down as a program. Oh... That's really hard.
 
